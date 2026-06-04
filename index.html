@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>First Year Foundations — Gentle Baby Development Guides for the First Year</title>
+  <meta name="description" content="Age-specific baby development PDF guides (0–12 months) written by a Feldenkrais-certified practitioner. No milestone pressure — gentle, practical support for every stage of your baby's first year.">
+  <meta name="keywords" content="baby development guide, Feldenkrais baby, gentle baby development, tummy time, baby milestones, first year baby">
+  <link rel="canonical" href="https://first-year-foundations.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="First Year Foundations — Gentle Baby Development Guides">
+  <meta property="og:description" content="Age-specific PDF guides for the first year of life. Written by a Feldenkrais-certified practitioner. No milestone pressure, no medical jargon.">
+  <meta property="og:url" content="https://first-year-foundations.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://first-year-foundations.com/images/logo.png">
+
+  <!-- Schema: WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "First Year Foundations",
+    "url": "https://first-year-foundations.com",
+    "description": "Age-specific baby development guides for the first year of life, written by a Feldenkrais-certified practitioner."
+  }
+  </script>
+
+  <!-- Schema: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "First Year Foundations",
+    "url": "https://first-year-foundations.com",
+    "logo": "https://first-year-foundations.com/images/logo.png",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "hello@first-year-foundations.com",
+      "contactType": "customer support"
+    }
+  }
+  </script>
+
+  <style>
+    /* ── Reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: #FDFCFF;
+      color: #3A3A38;
+      line-height: 1.7;
+      font-size: 17px;
+    }
+
+    /* ── Colours ── */
+    :root {
+      --lavender-bg: #FDFCFF;
+      --lavender-light: #F5F3FF;
+      --lavender-mid: #CECBF6;
+      --purple-main: #5851A0;
+      --purple-button: #8880DC;
+      --purple-dark: #3D3580;
+      --text-body: #3A3A38;
+      --text-muted: #707080;
+      --border: #E8E5FA;
+      --cream: #FDF8F5;
+      --teal: #3D7A72;
+      --terracotta: #C1603A;
+    }
+
+    /* ── Typography ── */
+    h1, h2, h3, h4 { color: var(--purple-dark); line-height: 1.25; font-weight: normal; }
+    h1 { font-size: clamp(2rem, 5vw, 3rem); }
+    h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); }
+    h3 { font-size: 1.25rem; }
+    p { color: var(--text-body); margin-bottom: 1rem; }
+    a { color: var(--purple-main); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Layout ── */
+    .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+    .container--wide { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    section { padding: 4rem 0; }
+    section:nth-child(even) { background: var(--lavender-light); }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-block;
+      background: var(--purple-button);
+      color: #fff;
+      padding: 0.85rem 2rem;
+      border-radius: 30px;
+      font-family: Georgia, serif;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s, transform 0.1s;
+      text-decoration: none;
+    }
+    .btn:hover { background: var(--purple-dark); transform: translateY(-1px); text-decoration: none; color: #fff; }
+    .btn--outline {
+      background: transparent;
+      border: 1.5px solid var(--purple-button);
+      color: var(--purple-button);
+    }
+    .btn--outline:hover { background: var(--purple-button); color: #fff; }
+    .btn--teal { background: var(--teal); }
+    .btn--teal:hover { background: #2C5F5A; }
+
+    /* ── Navigation ── */
+    nav {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .nav-logo img { height: 48px; width: auto; }
+    .nav-logo span { font-size: 1rem; color: var(--purple-dark); font-weight: normal; display: none; }
+    .nav-links { display: flex; align-items: center; gap: 1.5rem; list-style: none; }
+    .nav-links a { color: var(--text-muted); font-size: 0.95rem; font-family: Georgia, serif; }
+    .nav-links a:hover { color: var(--purple-main); text-decoration: none; }
+    .nav-cta { font-size: 0.9rem !important; padding: 0.5rem 1.25rem !important; }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--lavender-bg);
+      padding: 5rem 0 4rem;
+      text-align: center;
+    }
+    .hero-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--purple-button);
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+    .hero h1 { margin-bottom: 1.25rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 560px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+    }
+    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .hero-credential {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* ── Trust bar ── */
+    .trust-bar {
+      background: var(--lavender-light);
+      padding: 1.5rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .trust-bar-inner {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .trust-item span { color: var(--purple-main); font-size: 1.1rem; }
+
+    /* ── Section labels ── */
+    .section-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--purple-button);
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    /* ── Age guide cards ── */
+    .guides-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+    .guide-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.75rem 1.5rem;
+      transition: box-shadow 0.2s, transform 0.2s;
+      text-align: center;
+    }
+    .guide-card:hover { box-shadow: 0 8px 30px rgba(136,128,220,0.12); transform: translateY(-2px); }
+    .guide-card-age {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--purple-button);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .guide-card h3 { font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--purple-dark); }
+    .guide-card p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.25rem; line-height: 1.6; }
+    .guide-card .price { font-size: 1rem; color: var(--purple-main); margin-bottom: 1rem; }
+
+    /* ── Bundle banner ── */
+    .bundle-banner {
+      background: linear-gradient(135deg, #5851A0 0%, #8880DC 100%);
+      border-radius: 20px;
+      padding: 2.5rem;
+      text-align: center;
+      margin-top: 2rem;
+      color: #fff;
+    }
+    .bundle-banner h3 { color: #fff; font-size: 1.5rem; margin-bottom: 0.75rem; }
+    .bundle-banner p { color: rgba(255,255,255,0.85); margin-bottom: 1.5rem; }
+    .bundle-banner .btn { background: #fff; color: var(--purple-dark); }
+    .bundle-banner .btn:hover { background: var(--lavender-light); }
+    .bundle-save {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 0.3rem 1rem;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+
+    /* ── Why different ── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .why-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.75rem;
+    }
+    .why-card h3 { font-size: 1.05rem; margin-bottom: 0.6rem; }
+    .why-card p { font-size: 0.9rem; color: var(--text-muted); margin: 0; line-height: 1.65; }
+    .why-icon { font-size: 1.75rem; margin-bottom: 0.75rem; display: block; }
+
+    /* ── About strip ── */
+    .about-strip {
+      background: var(--cream);
+      border-top: 1px solid #EDE8E0;
+      border-bottom: 1px solid #EDE8E0;
+    }
+    .about-strip-inner {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .about-strip-logo { flex-shrink: 0; }
+    .about-strip-logo img { width: 100px; height: 100px; object-fit: contain; }
+    .about-strip-text h2 { font-size: 1.4rem; margin-bottom: 0.5rem; }
+    .about-strip-text p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0.75rem; }
+    .credential-badge {
+      display: inline-block;
+      background: var(--lavender-light);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 0.35rem 1rem;
+      font-size: 0.82rem;
+      color: var(--purple-main);
+    }
+
+    /* ── Freebie strip ── */
+    .freebie-strip {
+      background: var(--teal);
+      padding: 3rem 0;
+      text-align: center;
+    }
+    .freebie-strip h2 { color: #fff; margin-bottom: 0.75rem; font-size: 1.6rem; }
+    .freebie-strip p { color: rgba(255,255,255,0.85); margin-bottom: 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .freebie-strip .btn { background: #fff; color: var(--teal); }
+    .freebie-strip .btn:hover { background: #F0FAF8; }
+
+    /* ── FAQ ── */
+    .faq-list { margin-top: 2rem; }
+    .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+      font-size: 1rem;
+      color: var(--purple-dark);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      background: none;
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-family: Georgia, serif;
+      padding: 0;
+    }
+    .faq-q:hover { color: var(--purple-button); }
+    .faq-icon { font-size: 1.25rem; color: var(--purple-button); flex-shrink: 0; transition: transform 0.2s; }
+    .faq-a { font-size: 0.95rem; color: var(--text-muted); margin-top: 0.75rem; display: none; line-height: 1.7; }
+    .faq-item.open .faq-a { display: block; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--purple-dark);
+      color: rgba(255,255,255,0.7);
+      padding: 3rem 0 2rem;
+      font-size: 0.88rem;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2rem;
+    }
+    .footer-brand img { height: 56px; width: auto; margin-bottom: 0.75rem; filter: brightness(0) invert(1) opacity(0.8); }
+    .footer-brand p { font-size: 0.82rem; line-height: 1.6; color: rgba(255,255,255,0.55); }
+    footer h4 { color: rgba(255,255,255,0.85); font-size: 0.88rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.75rem; font-weight: normal; }
+    footer ul { list-style: none; }
+    footer ul li { margin-bottom: 0.5rem; }
+    footer ul a { color: rgba(255,255,255,0.6); font-size: 0.88rem; }
+    footer ul a:hover { color: #fff; text-decoration: none; }
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 2rem auto 0;
+      padding: 1.5rem 1.5rem 0;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.4);
+    }
+    .footer-disclaimer {
+      max-width: 1100px;
+      margin: 1rem auto 0;
+      padding: 0 1.5rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.6;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 700px) {
+      .nav-links { display: none; }
+      .footer-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .about-strip-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="images/logo.png" alt="First Year Foundations logo">
+    </a>
+    <ul class="nav-links">
+      <li><a href="/0-3-months.html">0–3 Months</a></li>
+      <li><a href="/3-6-months.html">3–6 Months</a></li>
+      <li><a href="/6-9-months.html">6–9 Months</a></li>
+      <li><a href="/9-12-months.html">9–12 Months</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/free.html" class="btn btn--outline nav-cta">Free guide</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <span class="hero-label">Feldenkrais-informed · Age-specific · PDF guides</span>
+    <h1>Gentle baby development guides for the first year</h1>
+    <p class="hero-sub">Written by a Feldenkrais-certified practitioner. Age-specific guidance for every stage — without milestone pressure, without medical jargon, without anxiety.</p>
+    <div class="hero-actions">
+      <a href="#guides" class="btn">Find your baby's guide</a>
+      <a href="/free.html" class="btn btn--outline">Get the free guide</a>
+    </div>
+    <p class="hero-credential">Created by a Feldenkrais-certified practitioner · <a href="/about.html">About the author →</a></p>
+  </div>
+</section>
+
+<!-- Trust bar -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item"><span>✦</span> Feldenkrais-certified practitioner</div>
+    <div class="trust-item"><span>✦</span> Age-specific guidance</div>
+    <div class="trust-item"><span>✦</span> No milestone pressure</div>
+    <div class="trust-item"><span>✦</span> Instant PDF download</div>
+  </div>
+</div>
+
+<!-- Age guide cards -->
+<section id="guides">
+  <div class="container">
+    <span class="section-label">The guides</span>
+    <h2>Find your baby's stage</h2>
+    <p style="color:var(--text-muted);max-width:560px">Each guide is written specifically for one stage of development — not a generic overview, but a focused, practical companion for exactly where your baby is right now.</p>
+    <div class="guides-grid">
+
+      <div class="guide-card">
+        <span class="guide-card-age">0–3 Months</span>
+        <h3>The Fourth Trimester</h3>
+        <p>Nervous system foundations, gentle tummy time, head and neck movement, and creating a calm environment from day one.</p>
+        <p class="price">$14.99</p>
+        <a href="/0-3-months.html" class="btn" style="font-size:0.9rem;padding:0.65rem 1.5rem">Learn more →</a>
+      </div>
+
+      <div class="guide-card">
+        <span class="guide-card-age">3–6 Months</span>
+        <h3>Rolling & Reaching</h3>
+        <p>Supporting rolling without forcing it, helping your baby find their hands and feet, and what to do when they resist floor time.</p>
+        <p class="price">$14.99</p>
+        <a href="/3-6-months.html" class="btn" style="font-size:0.9rem;padding:0.65rem 1.5rem">Learn more →</a>
+      </div>
+
+      <div class="guide-card">
+        <span class="guide-card-age">6–9 Months</span>
+        <h3>Crawling & Sitting</h3>
+        <p>Crawling readiness, the sitting question, pincer grasp development, and setting up your home for this mobile stage.</p>
+        <p class="price">$14.99</p>
+        <a href="/6-9-months.html" class="btn" style="font-size:0.9rem;padding:0.65rem 1.5rem">Learn more →</a>
+      </div>
+
+      <div class="guide-card">
+        <span class="guide-card-age">9–12 Months</span>
+        <h3>Cruising & First Steps</h3>
+        <p>Pulling to stand, first steps readiness, early communication milestones, and when to seek professional evaluation.</p>
+        <p class="price">$14.99</p>
+        <a href="/9-12-months.html" class="btn" style="font-size:0.9rem;padding:0.65rem 1.5rem">Learn more →</a>
+      </div>
+
+    </div>
+
+    <!-- Bundle banner -->
+    <div class="bundle-banner">
+      <span class="bundle-save">Save 33% — most popular choice</span>
+      <h3>The First Year Bundle</h3>
+      <p>All four guides in one purchase. The complete roadmap for your baby's first year — from newborn to first steps. Most parents tell us this is the one they wish they'd started with.</p>
+      <a href="/bundle.html" class="btn">See the bundle — $39.99</a>
+    </div>
+  </div>
+</section>
+
+<!-- Why different -->
+<section>
+  <div class="container">
+    <span class="section-label">Why First Year Foundations</span>
+    <h2>A different kind of baby development guide</h2>
+    <p style="color:var(--text-muted);max-width:560px">Most baby development content focuses on whether your baby is hitting milestones. We focus on how to support the movement quality that makes those milestones possible.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-icon">🌱</span>
+        <h3>Rooted in Feldenkrais</h3>
+        <p>The Feldenkrais Method sees movement as learning. Babies develop through comfort, variation, and freedom — not through drills, pressure, or forced positions.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">📅</span>
+        <h3>Age-specific, not generic</h3>
+        <p>Each guide is written for one specific stage. You get exactly what's relevant for your baby right now — not an overwhelming overview of the whole first year.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">😌</span>
+        <h3>No milestone anxiety</h3>
+        <p>We replace milestone charts with an understanding of movement quality. Your baby is not behind. They are unfolding — and your job is to make the ground comfortable.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">✍️</span>
+        <h3>Written by a practitioner</h3>
+        <p>These guides are created by a Feldenkrais-certified practitioner with real experience supporting baby development — not by a content team or AI.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About strip -->
+<section class="about-strip">
+  <div class="container">
+    <div class="about-strip-inner">
+      <div class="about-strip-logo">
+        <img src="images/logo.png" alt="First Year Foundations">
+      </div>
+      <div class="about-strip-text">
+        <h2>About First Year Foundations</h2>
+        <p>First Year Foundations was created by a Feldenkrais-certified practitioner who wanted parents to have access to the kind of developmental understanding that usually only comes from working one-on-one with a specialist.</p>
+        <p>These guides are educational resources — not medical advice, not therapy, not a replacement for your paediatrician. They are a practical, informed companion for the parents doing their best every day.</p>
+        <span class="credential-badge">Feldenkrais-certified practitioner</span>
+        <br><br>
+        <a href="/about.html">Read more about our approach →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Freebie strip -->
+<div class="freebie-strip">
+  <div class="container">
+    <h2>Start here — it's free</h2>
+    <p>Download our free guide: 5 Gentle Ways to Support Your Baby's Development in the First 3 Months. No purchase required.</p>
+    <a href="/free.html" class="btn">Get the free guide</a>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section>
+  <div class="container">
+    <span class="section-label">Common questions</span>
+    <h2>Frequently asked questions</h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Which guide should I start with?
+          <span class="faq-icon">+</span>
+        </button>
+        <p class="faq-a">Start with the guide that matches your baby's current age. Each guide is self-contained — you don't need to read them in order. If you're expecting or have a newborn, the 0–3 month guide is the natural starting point.</p>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Do I need any Feldenkrais experience to use these guides?
+          <span class="faq-icon">+</span>
+        </button>
+        <p class="faq-a">None at all. The guides are written in plain, parent-friendly language. You don't need any background in Feldenkrais or movement education — everything is explained clearly from the ground up.</p>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Are these guides a substitute for medical advice?
+          <span class="faq-icon">+</span>
+        </button>
+        <p class="faq-a">No — these are educational resources only. They do not replace evaluation or care from your paediatrician, physiotherapist, or any qualified health professional. If you have specific concerns about your baby's development, always consult a professional.</p>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How do I receive the guide after purchase?
+          <span class="faq-icon">+</span>
+        </button>
+        <p class="faq-a">Instantly. Once your payment is confirmed, you'll have immediate access to the PDF through your Whop account. You can download it and save it to any device.</p>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Is the bundle worth it compared to individual guides?
+          <span class="faq-icon">+</span>
+        </button>
+        <p class="faq-a">If your baby is in the early months and you want the complete picture for the whole first year, the bundle saves you around $20 compared to buying guides individually. Most parents tell us it's the one they wish they'd started with.</p>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          My baby seems behind on milestones — will these guides help?
+          <span class="faq-icon">+</span>
+        </button>
+        <p class="faq-a">These guides focus on supporting natural movement development rather than chasing milestones. They can help you understand what's typical, how to gently support your baby's current stage, and when it's worth talking to your paediatrician. They are not a diagnostic or therapeutic tool.</p>
+      </div>
+
+    </div>
+    <p style="margin-top:1.5rem;font-size:0.9rem;color:var(--text-muted)">More questions? <a href="/faq.html">See the full FAQ →</a></p>
+  </div>
+
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which guide should I start with?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Start with the guide that matches your baby's current age. Each guide is self-contained. If you're expecting or have a newborn, the 0–3 month guide is the natural starting point."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need any Feldenkrais experience to use these guides?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "None at all. The guides are written in plain, parent-friendly language with no background in Feldenkrais or movement education required."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are these guides a substitute for medical advice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. These are educational resources only and do not replace evaluation or care from your paediatrician, physiotherapist, or any qualified health professional."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I receive the guide after purchase?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Instantly. Once your payment is confirmed, you'll have immediate access to the PDF through your Whop account, ready to download to any device."
+        }
+      }
+    ]
+  }
+  </script>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="images/logo.png" alt="First Year Foundations">
+      <p>Gentle, age-specific baby development guides for the first year. Written by a Feldenkrais-certified practitioner.</p>
+    </div>
+    <div>
+      <h4>Guides</h4>
+      <ul>
+        <li><a href="/0-3-months.html">0–3 Month Guide</a></li>
+        <li><a href="/3-6-months.html">3–6 Month Guide</a></li>
+        <li><a href="/6-9-months.html">6–9 Month Guide</a></li>
+        <li><a href="/9-12-months.html">9–12 Month Guide</a></li>
+        <li><a href="/bundle.html">First Year Bundle</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Information</h4>
+      <ul>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/faq.html">FAQ</a></li>
+        <li><a href="/free.html">Free guide</a></li>
+        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="mailto:hello@first-year-foundations.com">Contact</a></li>
+      </ul>
+      <h4 style="margin-top:1.25rem">Legal</h4>
+      <ul>
+        <li><a href="/disclaimer.html">Health disclaimer</a></li>
+        <li><a href="/terms.html">Terms of use</a></li>
+        <li><a href="/privacy.html">Privacy policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-disclaimer">
+    Educational only — not medical advice. First Year Foundations guides are educational resources for parents and do not replace evaluation or care from a paediatrician or qualified health professional. If you have concerns about your baby's development, consult your paediatrician.
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 First Year Foundations. All rights reserved.</span>
+    <span><a href="mailto:hello@first-year-foundations.com" style="color:rgba(255,255,255,0.4)">hello@first-year-foundations.com</a></span>
+  </div>
+</footer>
+
+<script>
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+
+</body>
+</html>
