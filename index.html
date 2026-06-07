@@ -43,7 +43,7 @@
   </script>
 
   <style>
-    /* ג”€ג”€ Reset & base ג”€ג”€ */
+    /* -- Reset & base -- */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
@@ -54,7 +54,7 @@
       font-size: 17px;
     }
 
-    /* ג”€ג”€ Colours ג”€ג”€ */
+    /* -- Colours -- */
     :root {
       --lavender-bg: #FDFCFF;
       --lavender-light: #F5F3FF;
@@ -76,7 +76,7 @@
       --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     }
 
-    /* ג”€ג”€ Typography ג”€ג”€ */
+    /* -- Typography -- */
     h1, h2, h3, h4 { color: var(--purple-dark); line-height: 1.25; font-weight: 600; }
     h1 { font-size: clamp(2rem, 5vw, 3rem); }
     h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); }
@@ -86,13 +86,13 @@
     a { color: var(--purple-main); text-decoration: none; transition: color 0.2s; }
     a:hover { color: var(--purple-dark); text-decoration: underline; }
 
-    /* ג”€ג”€ Layout ג”€ג”€ */
+    /* -- Layout -- */
     .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
     .container--wide { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
     section { padding: 4rem 0; }
     section:nth-child(even) { background: var(--lavender-light); }
 
-    /* ג”€ג”€ Buttons ג”€ג”€ */
+    /* -- Buttons -- */
     .btn {
       display: inline-block;
       background: var(--purple-button);
@@ -122,7 +122,7 @@
     .btn--teal { background: var(--teal); }
     .btn--teal:hover { background: #2C5F5A; box-shadow: var(--shadow-lg); }
 
-    /* ג”€ג”€ Navigation ג”€ג”€ */
+    /* -- Navigation -- */
     nav {
       background: #fff;
       border-bottom: 1px solid var(--border);
@@ -202,7 +202,7 @@
       .nav-hamburger { display: flex; }
     }
 
-    /* ג”€ג”€ Hero ג”€ג”€ */
+    /* -- Hero -- */
     .hero {
       background:
         radial-gradient(circle at 80% 20%, rgba(152, 140, 220, 0.08) 0%, transparent 50%),
@@ -245,7 +245,7 @@
       font-style: italic;
     }
 
-    /* ג”€ג”€ Trust bar ג”€ג”€ */
+    /* -- Trust bar -- */
     .trust-bar {
       background: var(--lavender-light);
       padding: 1.5rem 0;
@@ -270,7 +270,7 @@
     }
     .trust-item span { color: var(--purple-main); font-size: 1.1rem; }
 
-    /* ג”€ג”€ Section labels ג”€ג”€ */
+    /* -- Section labels -- */
     .section-label {
       font-size: 0.78rem;
       letter-spacing: 0.12em;
@@ -282,7 +282,7 @@
       font-weight: 600;
     }
 
-    /* ג”€ג”€ Age guide cards ג”€ג”€ */
+    /* -- Age guide cards -- */
     .guides-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -311,7 +311,7 @@
     .guide-card p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.25rem; line-height: 1.6; }
     .guide-card .price { font-size: 1rem; color: var(--purple-main); margin-bottom: 1rem; }
 
-    /* ג”€ג”€ Bundle banner ג”€ג”€ */
+    /* -- Bundle banner -- */
     .bundle-banner {
       background: linear-gradient(135deg, #5851A0 0%, #8880DC 100%);
       border-radius: 20px;
@@ -333,7 +333,7 @@
       margin-bottom: 1rem;
     }
 
-    /* ג”€ג”€ Why different ג”€ג”€ */
+    /* -- Why different -- */
     .why-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -353,7 +353,7 @@
     .why-card p { font-size: 0.9rem; color: var(--text-muted); margin: 0; line-height: 1.65; }
     .why-icon { font-size: 1.75rem; margin-bottom: 0.75rem; display: block; }
 
-    /* ג”€ג”€ About strip ג”€ג”€ */
+    /* -- About strip -- */
     .about-strip {
       background: var(--cream);
       border-top: 1px solid #EDE8E0;
@@ -379,7 +379,7 @@
       color: var(--purple-main);
     }
 
-    /* ג”€ג”€ Freebie strip ג”€ג”€ */
+    /* -- Freebie strip -- */
     .freebie-strip {
       background: var(--teal);
       padding: 3rem 0;
@@ -390,7 +390,7 @@
     .freebie-strip .btn { background: #fff; color: var(--teal); }
     .freebie-strip .btn:hover { background: #F0FAF8; }
 
-    /* ג”€ג”€ FAQ ג”€ג”€ */
+    /* -- FAQ -- */
     .faq-list { margin-top: 2rem; }
     .faq-item { border-bottom: 1px solid var(--border); padding: 1.25rem 0; }
     .faq-item:last-child { border-bottom: none; }
@@ -415,7 +415,7 @@
     .faq-item.open .faq-a { display: block; }
     .faq-item.open .faq-icon { transform: rotate(45deg); }
 
-    /* ג”€ג”€ Footer ג”€ג”€ */
+    /* -- Footer -- */
     footer {
       background: var(--purple-dark);
       color: rgba(255,255,255,0.7);
@@ -459,7 +459,7 @@
       line-height: 1.6;
     }
 
-    /* ג”€ג”€ Responsive ג”€ג”€ */
+    /* -- Responsive -- */
     @media (max-width: 700px) {
       .nav-links { display: none; }
       .footer-inner { grid-template-columns: 1fr; gap: 1.5rem; }
