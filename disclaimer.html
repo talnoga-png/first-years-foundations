@@ -60,6 +60,11 @@
 <nav>
   <div class="nav-inner">
     <a href="/" class="nav-logo"><img src="images/logo.png" alt="First Year Foundations"></a>
+    <button class="nav-hamburger" aria-label="Menu" onclick="toggleMobileNav()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <ul class="nav-links">
       <li><a href="/0-3-months.html">0ג€“3 Months</a></li>
       <li><a href="/3-6-months.html">3ג€“6 Months</a></li>
@@ -147,16 +152,54 @@
   <div class="footer-bottom"><span>ֲ© 2026 First Year Foundations. All rights reserved.</span><span><a href="mailto:hello@first-years-foundations.com" style="color:rgba(255,255,255,0.4)">hello@first-years-foundations.com</a></span></div>
 </footer>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PYRBFC16BM"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PYRBFC16BM">function toggleMobileNav() {
+  const hamburger = document.querySelector('.nav-hamburger');
+  const mobileNav = document.querySelector('.nav-mobile');
+  hamburger.classList.toggle('active');
+  mobileNav.classList.toggle('active');
+}
+
+function closeMobileNav() {
+  const hamburger = document.querySelector('.nav-hamburger');
+  const mobileNav = document.querySelector('.nav-mobile');
+  hamburger.classList.remove('active');
+  mobileNav.classList.remove('active');
+}
+
+// Close mobile nav when link is clicked
+document.querySelectorAll('.nav-mobile a').forEach(link => {
+  link.addEventListener('click', closeMobileNav);
+});
+</script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-PYRBFC16BM');
   gtag('event', 'page_view', {page_path: '/disclaimer.html', page_title: 'Health Disclaimer'});
+function toggleMobileNav() {
+  const hamburger = document.querySelector('.nav-hamburger');
+  const mobileNav = document.querySelector('.nav-mobile');
+  hamburger.classList.toggle('active');
+  mobileNav.classList.toggle('active');
+}
+
+function closeMobileNav() {
+  const hamburger = document.querySelector('.nav-hamburger');
+  const mobileNav = document.querySelector('.nav-mobile');
+  hamburger.classList.remove('active');
+  mobileNav.classList.remove('active');
+}
+
+// Close mobile nav when link is clicked
+document.querySelectorAll('.nav-mobile a').forEach(link => {
+  link.addEventListener('click', closeMobileNav);
+});
 </script>
 
 </body>
 </html>
+
+
 
 

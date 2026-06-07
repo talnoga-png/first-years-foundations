@@ -35,7 +35,25 @@
       "availability": "https://schema.org/InStock"
     }
   }
-  </script>
+  function toggleMobileNav() {
+  const hamburger = document.querySelector('.nav-hamburger');
+  const mobileNav = document.querySelector('.nav-mobile');
+  hamburger.classList.toggle('active');
+  mobileNav.classList.toggle('active');
+}
+
+function closeMobileNav() {
+  const hamburger = document.querySelector('.nav-hamburger');
+  const mobileNav = document.querySelector('.nav-mobile');
+  hamburger.classList.remove('active');
+  mobileNav.classList.remove('active');
+}
+
+// Close mobile nav when link is clicked
+document.querySelectorAll('.nav-mobile a').forEach(link => {
+  link.addEventListener('click', closeMobileNav);
+});
+</script>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -80,6 +98,60 @@
     .nav-links a { color: var(--text-muted); font-size: 0.95rem; font-family: Georgia, serif; }
     .nav-links a:hover { color: var(--purple-main); text-decoration: none; }
     .nav-cta { font-size: 0.9rem !important; padding: 0.5rem 1.25rem !important; }
+    /* Hamburger menu */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      gap: 5px;
+      z-index: 101;
+    }
+    .nav-hamburger span {
+      width: 24px;
+      height: 3px;
+      background: var(--purple-dark);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(8px, 8px); }
+    .nav-hamburger.active span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(8px, -8px); }
+
+    /* Mobile nav drawer */
+    .nav-mobile {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      flex-direction: column;
+      gap: 0;
+      padding: 1rem 1.5rem;
+      box-shadow: var(--shadow-lg);
+    }
+    .nav-mobile.active { display: flex; }
+    .nav-mobile a {
+      padding: 0.75rem 0;
+      color: var(--text-muted);
+      font-family: var(--font-sans);
+      font-weight: 500;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-mobile a:last-child { border-bottom: none; }
+    .nav-mobile a:hover { color: var(--purple-main); }
+    .nav-mobile .btn { margin-top: 1rem; padding: 0.75rem 1.5rem; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+    }
     .hero { background: var(--lavender-bg); padding: 3rem 0; text-align: center; }
     .hero h1 { margin-bottom: 1.25rem; max-width: 700px; margin-left: auto; margin-right: auto; }
     .hero-label { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--purple-button); margin-bottom: 0.75rem; display: block; }
@@ -121,6 +193,11 @@
 <nav>
   <div class="nav-inner">
     <a href="/" class="nav-logo"><img src="images/logo.png" alt="First Year Foundations logo"></a>
+    <button class="nav-hamburger" aria-label="Menu" onclick="toggleMobileNav()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <ul class="nav-links">
       <li><a href="/0-3-months.html">0ג€“3 Months</a></li>
       <li><a href="/3-6-months.html">3ג€“6 Months</a></li>
@@ -258,7 +335,25 @@
   <div class="footer-bottom"><span>ֲ© 2026 First Year Foundations. All rights reserved.</span><span><a href="mailto:hello@first-years-foundations.com" style="color:rgba(255,255,255,0.4)">hello@first-years-foundations.com</a></span></div>
 </footer>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PYRBFC16BM"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PYRBFC16BM">function toggleMobileNav() {
+  const hamburger = document.querySelector('.nav-hamburger');
+  const mobileNav = document.querySelector('.nav-mobile');
+  hamburger.classList.toggle('active');
+  mobileNav.classList.toggle('active');
+}
+
+function closeMobileNav() {
+  const hamburger = document.querySelector('.nav-hamburger');
+  const mobileNav = document.querySelector('.nav-mobile');
+  hamburger.classList.remove('active');
+  mobileNav.classList.remove('active');
+}
+
+// Close mobile nav when link is clicked
+document.querySelectorAll('.nav-mobile a').forEach(link => {
+  link.addEventListener('click', closeMobileNav);
+});
+</script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -270,6 +365,24 @@
       gtag('event', 'guide_purchase_click', {guide: '6-9-months', price: '$14.99'});
     });
   });
+function toggleMobileNav() {
+  const hamburger = document.querySelector('.nav-hamburger');
+  const mobileNav = document.querySelector('.nav-mobile');
+  hamburger.classList.toggle('active');
+  mobileNav.classList.toggle('active');
+}
+
+function closeMobileNav() {
+  const hamburger = document.querySelector('.nav-hamburger');
+  const mobileNav = document.querySelector('.nav-mobile');
+  hamburger.classList.remove('active');
+  mobileNav.classList.remove('active');
+}
+
+// Close mobile nav when link is clicked
+document.querySelectorAll('.nav-mobile a').forEach(link => {
+  link.addEventListener('click', closeMobileNav);
+});
 </script>
 
 <script>
@@ -279,9 +392,29 @@ function toggleFaq(btn) {
   document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
   if (!isOpen) item.classList.add('open');
 }
+function toggleMobileNav() {
+  const hamburger = document.querySelector('.nav-hamburger');
+  const mobileNav = document.querySelector('.nav-mobile');
+  hamburger.classList.toggle('active');
+  mobileNav.classList.toggle('active');
+}
+
+function closeMobileNav() {
+  const hamburger = document.querySelector('.nav-hamburger');
+  const mobileNav = document.querySelector('.nav-mobile');
+  hamburger.classList.remove('active');
+  mobileNav.classList.remove('active');
+}
+
+// Close mobile nav when link is clicked
+document.querySelectorAll('.nav-mobile a').forEach(link => {
+  link.addEventListener('click', closeMobileNav);
+});
 </script>
 
 </body>
 </html>
+
+
 
 
