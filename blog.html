@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Baby Development Tips | First Year Foundations</title>
+  <meta name="description" content="Read gentle baby development insights, tips on supporting movement, and Feldenkrais-informed parenting practices on our blog.">
+  <link rel="canonical" href="https://first-year-foundations.com/blog.html">
+  <meta property="og:title" content="Blog — First Year Foundations">
+  <meta property="og:description" content="Baby development insights and gentle movement tips for parents.">
+  <meta property="og:url" content="https://first-year-foundations.com/blog.html">
+  <meta property="og:type" content="website">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Georgia, 'Times New Roman', serif; background: #FDFCFF; color: #3A3A38; line-height: 1.7; font-size: 17px; }
+    :root {
+      --lavender-bg: #FDFCFF; --lavender-light: #F5F3FF;
+      --purple-main: #5851A0; --purple-button: #8880DC; --purple-dark: #3D3580;
+      --text-body: #3A3A38; --text-muted: #707080; --border: #E8E5FA;
+      --teal: #3D7A72;
+    }
+    h1, h2 { color: var(--purple-dark); line-height: 1.25; font-weight: normal; }
+    h1 { font-size: clamp(2rem, 5vw, 3rem); }
+    h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); }
+    p { color: var(--text-body); margin-bottom: 1rem; }
+    a { color: var(--purple-main); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ul { margin-left: 1.5rem; margin-bottom: 1rem; }
+    .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+    section { padding: 4rem 0; }
+    .btn { display: inline-block; background: var(--purple-button); color: #fff; padding: 1.2rem 3rem; border-radius: 30px; font-family: Georgia, serif; font-size: 1.1rem; border: none; cursor: pointer; transition: background 0.2s; text-decoration: none; }
+    .btn:hover { background: var(--purple-dark); text-decoration: none; color: #fff; }
+    .btn--outline { background: transparent; border: 1.5px solid var(--purple-button); color: var(--purple-button); }
+    .btn--outline:hover { background: var(--purple-button); color: #fff; }
+    nav { background: #fff; border-bottom: 1px solid var(--border); padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    .nav-logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .nav-logo img { height: 48px; width: auto; }
+    .nav-links { display: flex; align-items: center; gap: 1.5rem; list-style: none; }
+    .nav-links a { color: var(--text-muted); font-size: 0.95rem; }
+    .hero { background: var(--lavender-bg); padding: 4rem 0; text-align: center; }
+    .hero h1 { margin-bottom: 1rem; }
+    .hero-sub { font-size: 1.15rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 1.5rem; }
+    .content-block { max-width: 700px; margin: 0 auto; }
+    .blog-post { margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid var(--border); }
+    .blog-post:last-child { border-bottom: none; }
+    .blog-title { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .blog-meta { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; }
+    .blog-excerpt { color: var(--text-body); margin-bottom: 1.5rem; }
+    .blog-link { display: inline-block; color: var(--purple-button); font-weight: 500; }
+    .blog-link:hover { color: var(--purple-dark); text-decoration: underline; }
+    footer { background: var(--purple-dark); color: rgba(255,255,255,0.7); padding: 3rem 0 2rem; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; }
+    footer h4 { color: rgba(255,255,255,0.85); text-transform: uppercase; margin-bottom: 0.75rem; }
+    footer ul { list-style: none; margin-left: 0; }
+    footer a { color: rgba(255,255,255,0.6); }
+    footer a:hover { color: #fff; }
+    .footer-disclaimer { max-width: 1100px; margin: 1rem auto 0; padding: 0 1.5rem; font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+    .footer-bottom { max-width: 1100px; margin: 2rem auto 0; padding: 1.5rem 1.5rem 0; border-top: 1px solid rgba(255,255,255,0.12); display: flex; justify-content: space-between; flex-wrap: wrap; }
+    @media (max-width: 700px) { .nav-links { display: none; } .footer-inner { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><img src="images/logo.png" alt="First Year Foundations"></a>
+    <ul class="nav-links">
+      <li><a href="/0-3-months.html">0–3 Months</a></li>
+      <li><a href="/3-6-months.html">3–6 Months</a></li>
+      <li><a href="/6-9-months.html">6–9 Months</a></li>
+      <li><a href="/9-12-months.html">9–12 Months</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/free.html" class="btn btn--outline" style="font-size:0.9rem;padding:0.5rem 1rem;">Free guide</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <h1>Blog</h1>
+    <p class="hero-sub">Insights on baby development, movement, and gentle parenting</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="content-block">
+
+      <div class="blog-post">
+        <h2 class="blog-title">The Power of Tummy Time: What Your Baby Might Be Learning</h2>
+        <p class="blog-meta">Published February 15, 2026</p>
+        <p class="blog-excerpt">Tummy time is often mentioned as something babies "should" do, but what's actually happening during those minutes on their belly? Rather than thinking of tummy time as a developmental milestone checkpoint, consider it an invitation to observe your baby's relationship with gravity and effort.</p>
+        <a href="/blog-tummy-time.html" class="blog-link">Read more →</a>
+      </div>
+
+      <div class="blog-post">
+        <h2 class="blog-title">Supporting Rolling: A Gentle Approach to Movement Exploration</h2>
+        <p class="blog-meta">Published February 8, 2026</p>
+        <p class="blog-excerpt">Rolling is a moment of real change in a baby's body and sense of space. Most babies eventually roll over, but the path there is wonderfully varied. Rather than working toward rolling as a goal, what if we created conditions where rolling becomes interesting to your baby?</p>
+        <a href="/blog-rolling.html" class="blog-link">Read more →</a>
+      </div>
+
+      <p style="margin-top: 3rem;"><a href="/">← Back to home</a></p>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div><img src="images/logo.png" alt="First Year Foundations" style="height:56px;margin-bottom:0.75rem;filter:brightness(0) invert(1) opacity(0.8);"><p style="font-size:0.82rem;color:rgba(255,255,255,0.55);">Gentle baby development guides for the first year.</p></div>
+    <div><h4>Guides</h4><ul><li><a href="/0-3-months.html">0–3 Month Guide</a></li><li><a href="/3-6-months.html">3–6 Month Guide</a></li><li><a href="/6-9-months.html">6–9 Month Guide</a></li><li><a href="/9-12-months.html">9–12 Month Guide</a></li><li><a href="/bundle.html">First Year Bundle</a></li></ul></div>
+    <div><h4>Information</h4><ul><li><a href="/about.html">About</a></li><li><a href="/faq.html">FAQ</a></li><li><a href="/free.html">Free guide</a></li><li><a href="/blog.html">Blog</a></li></ul><h4 style="margin-top:1.25rem">Legal</h4><ul><li><a href="/disclaimer.html">Health disclaimer</a></li><li><a href="/terms.html">Terms of use</a></li><li><a href="/privacy.html">Privacy policy</a></li></ul></div>
+  </div>
+  <div class="footer-disclaimer">Educational only — not medical advice. First Year Foundations guides are educational resources for parents and do not replace evaluation or care from a paediatrician or qualified health professional.</div>
+  <div class="footer-bottom"><span>© 2026 First Year Foundations. All rights reserved.</span><span><a href="mailto:hello@first-year-foundations.com" style="color:rgba(255,255,255,0.4)">hello@first-year-foundations.com</a></span></div>
+</footer>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PYRBFC16BM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PYRBFC16BM');
+  gtag('event', 'page_view', {page_path: '/blog.html', page_title: 'Blog'});
+</script>
+
+</body>
+</html>
