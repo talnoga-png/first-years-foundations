@@ -99,22 +99,28 @@
       color: #fff;
       padding: 0.85rem 2rem;
       border-radius: 30px;
-      font-family: Georgia, serif;
+      font-family: var(--font-sans);
       font-size: 1rem;
+      font-weight: 600;
       cursor: pointer;
       border: none;
-      transition: background 0.2s, transform 0.1s;
+      transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
       text-decoration: none;
+      box-shadow: var(--shadow-md);
     }
-    .btn:hover { background: var(--purple-dark); transform: translateY(-1px); text-decoration: none; color: #fff; }
+    .btn:hover { background: var(--purple-dark); transform: translateY(-2px); text-decoration: none; color: #fff; box-shadow: var(--shadow-lg); }
+    .btn:focus-visible { outline: 2px solid var(--purple-main); outline-offset: 2px; }
+    .btn:active { transform: translateY(0); box-shadow: var(--shadow-sm); }
     .btn--outline {
       background: transparent;
-      border: 1.5px solid var(--purple-button);
+      border: 2px solid var(--purple-button);
       color: var(--purple-button);
+      box-shadow: none;
     }
-    .btn--outline:hover { background: var(--purple-button); color: #fff; }
+    .btn--outline:hover { background: rgba(136, 128, 220, 0.05); box-shadow: inset 0 0 0 2px rgba(136, 128, 220, 0.1); }
+    .btn--outline:focus-visible { outline: 2px solid var(--purple-main); outline-offset: 2px; }
     .btn--teal { background: var(--teal); }
-    .btn--teal:hover { background: #2C5F5A; }
+    .btn--teal:hover { background: #2C5F5A; box-shadow: var(--shadow-lg); }
 
     /* ג”€ג”€ Navigation ג”€ג”€ */
     nav {
