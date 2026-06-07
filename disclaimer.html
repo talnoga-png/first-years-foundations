@@ -39,7 +39,9 @@
     .nav-links a { color: var(--text-muted); font-size: 0.95rem; }
     .btn--outline { background: transparent; border: 1.5px solid var(--purple-button); color: var(--purple-button); padding: 0.5rem 1rem; border-radius: 30px; font-size: 0.9rem; text-decoration: none; }
     .btn--outline:hover { background: var(--purple-button); color: #fff; }
-    .hero { background: var(--lavender-bg); padding: 4rem 0; text-align: center; }
+    .hero { background: radial-gradient(circle at 80% 20%, rgba(152, 140, 220, 0.08) 0%, transparent 50%), linear-gradient(135deg, #F5F3FF 0%, #FDFCFF 50%, #FDF8F5 100%); padding: 4rem 0; text-align: center; }
+    .hero { position: relative; }
+    .hero::before { content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent 0%, var(--border) 50%, transparent 100%); }
     .hero h1 { margin-bottom: 1rem; }
     .hero-sub { font-size: 1.15rem; color: var(--text-muted); max-width: 600px; margin: 0 auto 1.5rem; }
     .content-block { max-width: 700px; margin: 0 auto; text-align: left; }
@@ -199,6 +201,8 @@ document.querySelectorAll('.nav-mobile a').forEach(link => {
 
 </body>
 </html>
+
+
 
 
 
