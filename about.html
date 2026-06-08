@@ -51,7 +51,7 @@ document.querySelectorAll('.nav-mobile a').forEach(link => {
 </script>
 
   <style>
-    /* ג”€ג”€ Reset & base ג”€ג”€ */
+    /*  Reset & base  */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
@@ -62,7 +62,7 @@ document.querySelectorAll('.nav-mobile a').forEach(link => {
       font-size: 17px;
     }
 
-    /* ג”€ג”€ Colours ג”€ג”€ */
+    /*  Colours  */
     :root {
       --lavender-bg: #FDFCFF;
       --lavender-light: #F5F3FF;
@@ -84,7 +84,7 @@ document.querySelectorAll('.nav-mobile a').forEach(link => {
       --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     }
 
-    /* ג”€ג”€ Typography ג”€ג”€ */
+    /*  Typography  */
     h1, h2, h3, h4 { color: var(--purple-dark); line-height: 1.25; font-weight: normal; }
     h1 { font-size: clamp(2rem, 5vw, 3rem); }
     h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); }
@@ -95,13 +95,13 @@ document.querySelectorAll('.nav-mobile a').forEach(link => {
     a { color: var(--purple-main); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* ג”€ג”€ Layout ג”€ג”€ */
+    /*  Layout  */
     .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
     .container--wide { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
     section { padding: 4rem 0; }
     section:nth-child(even) { background: var(--lavender-light); }
 
-    /* ג”€ג”€ Buttons ג”€ג”€ */
+    /*  Buttons  */
     .btn {
       display: inline-block;
       background: var(--purple-button);
@@ -123,7 +123,7 @@ document.querySelectorAll('.nav-mobile a').forEach(link => {
     }
     .btn--outline:hover { background: var(--purple-button); color: #fff; }
 
-    /* ג”€ג”€ Navigation ג”€ג”€ */
+    /*  Navigation  */
     nav {
       background: #fff;
       border-bottom: 1px solid var(--border);
@@ -202,7 +202,7 @@ document.querySelectorAll('.nav-mobile a').forEach(link => {
       .nav-hamburger { display: flex; }
     }
 
-    /* ג”€ג”€ Hero ג”€ג”€ */
+    /*  Hero  */
     .hero { background: radial-gradient(circle at 80% 20%, rgba(152, 140, 220, 0.08) 0%, transparent 50%), linear-gradient(135deg, #F5F3FF 0%, #FDFCFF 50%, #FDF8F5 100%);
       padding: 5rem 0 4rem;
       text-align: center;
@@ -224,7 +224,7 @@ document.querySelectorAll('.nav-mobile a').forEach(link => {
       line-height: 1.7;
     }
 
-    /* ג”€ג”€ Section label ג”€ג”€ */
+    /*  Section label  */
     .section-label {
       font-size: 0.78rem;
       letter-spacing: 0.12em;
@@ -234,7 +234,7 @@ document.querySelectorAll('.nav-mobile a').forEach(link => {
       margin-bottom: 0.75rem;
     }
 
-    /* ג”€ג”€ Content sections ג”€ג”€ */
+    /*  Content sections  */
     .content-block {
       max-width: 700px;
       margin: 0 auto;
@@ -243,7 +243,7 @@ document.querySelectorAll('.nav-mobile a').forEach(link => {
     .content-block h3 { margin-top: 2rem; margin-bottom: 0.75rem; }
     .content-block p + h3 { margin-top: 1.75rem; }
 
-    /* ג”€ג”€ Credential badge ג”€ג”€ */
+    /*  Credential badge  */
     .credential-badge {
       display: inline-block;
       background: var(--lavender-light);
@@ -254,7 +254,7 @@ document.querySelectorAll('.nav-mobile a').forEach(link => {
       color: var(--purple-main);
     }
 
-    /* ג”€ג”€ Footer ג”€ג”€ */
+    /*  Footer  */
     footer {
       background: var(--purple-dark);
       color: rgba(255,255,255,0.7);
@@ -298,7 +298,7 @@ document.querySelectorAll('.nav-mobile a').forEach(link => {
       line-height: 1.6;
     }
 
-    /* ג”€ג”€ Responsive ג”€ג”€ */
+    /*  Responsive  */
     @media (max-width: 700px) {
       .nav-links { display: none; }
       .footer-inner { grid-template-columns: 1fr; gap: 1.5rem; }
@@ -315,10 +315,10 @@ document.querySelectorAll('.nav-mobile a').forEach(link => {
       <img src="images/logo.png" alt="First Year Foundations logo">
     </a>
     <ul class="nav-links">
-      <li><a href="/0-3-months.html">0ג€“3 Months</a></li>
-      <li><a href="/3-6-months.html">3ג€“6 Months</a></li>
-      <li><a href="/6-9-months.html">6ג€“9 Months</a></li>
-      <li><a href="/9-12-months.html">9ג€“12 Months</a></li>
+      <li><a href="/0-3-months.html">03 Months</a></li>
+      <li><a href="/3-6-months.html">36 Months</a></li>
+      <li><a href="/6-9-months.html">69 Months</a></li>
+      <li><a href="/9-12-months.html">912 Months</a></li>
       <li><a href="/about.html">About</a></li>
       <li><a href="/free.html" class="btn btn--outline nav-cta">Free guide</a></li>
     </ul>
@@ -329,7 +329,7 @@ document.querySelectorAll('.nav-mobile a').forEach(link => {
 <section class="hero">
   <div class="container">
     <h1>About First Year Foundations</h1>
-    <p class="hero-sub">Built on 15+ years of movement expertise and Feldenkrais training. Created for parents who want to understand their baby's development ג€” not chase milestones.</p>
+    <p class="hero-sub">Built on 15+ years of movement expertise and Feldenkrais training. Created for parents who want to understand their baby's development  not chase milestones.</p>
   </div>
 </section>
 
@@ -340,22 +340,22 @@ document.querySelectorAll('.nav-mobile a').forEach(link => {
 
       <h2>Who We Are</h2>
       <p>First Year Foundations was created by a team with deep expertise in movement development and the Feldenkrais Method. We've spent 15+ years working with families, observing how babies learn to move, and understanding what actually supports natural development.</p>
-      <p>We wanted parents to have access to the kind of knowledge that usually only comes from working one-on-one with a specialist. So we created these guides ג€” practical, Feldenkrais-informed companions for every stage of the first year.</p>
+      <p>We wanted parents to have access to the kind of knowledge that usually only comes from working one-on-one with a specialist. So we created these guides  practical, Feldenkrais-informed companions for every stage of the first year.</p>
       <span class="credential-badge">Feldenkrais-certified practitioners</span>
 
-      <h2>The Feldenkrais Method ג€” In Plain Language</h2>
-      <p>The Feldenkrais Method is an approach to movement and learning developed by physicist and engineer Dr. Moshֳ© Feldenkrais in the mid-20th century. It's based on a simple but powerful idea: <strong>the nervous system learns best through comfort, variation, and freedom ג€” not through force, repetition, or pressure.</strong></p>
+      <h2>The Feldenkrais Method  In Plain Language</h2>
+      <p>The Feldenkrais Method is an approach to movement and learning developed by physicist and engineer Dr. Mosh Feldenkrais in the mid-20th century. It's based on a simple but powerful idea: <strong>the nervous system learns best through comfort, variation, and freedom  not through force, repetition, or pressure.</strong></p>
 
       <h3>What This Means for Your Baby</h3>
       <p><strong>Comfort supports learning.</strong> A baby who feels safe and settled can explore movement freely. A baby who is distressed, overwhelmed, or placed in positions they aren't ready for cannot. When learning happens in a state of ease, it sticks.</p>
 
-      <p><strong>Variation matters more than repetition.</strong> Babies learn through small differences in experience ג€” a slightly different surface, a different angle, a different approach. Doing the same thing the same way every day teaches less than you might expect. Variation is what wakes up the nervous system.</p>
+      <p><strong>Variation matters more than repetition.</strong> Babies learn through small differences in experience  a slightly different surface, a different angle, a different approach. Doing the same thing the same way every day teaches less than you might expect. Variation is what wakes up the nervous system.</p>
 
-      <p><strong>Observation over intervention.</strong> Rather than asking "what should I do to my baby," the Feldenkrais approach asks "what is my baby already doing, and how can I support more of it?" This shiftג€”from doing things to babies to observing with babiesג€”changes everything.</p>
+      <p><strong>Observation over intervention.</strong> Rather than asking "what should I do to my baby," the Feldenkrais approach asks "what is my baby already doing, and how can I support more of it?" This shiftfrom doing things to babies to observing with babieschanges everything.</p>
 
-      <p><strong>Floor time is irreplaceable.</strong> Time on a firm, flat surfaceג€”not in a bouncer, swing, or seatג€”is where babies discover how their body works in relation to gravity. This is the foundation of everything that follows: rolling, sitting, crawling, walking. Floor freedom isn't optional. It's the ground (literally) that development grows from.</p>
+      <p><strong>Floor time is irreplaceable.</strong> Time on a firm, flat surfacenot in a bouncer, swing, or seatis where babies discover how their body works in relation to gravity. This is the foundation of everything that follows: rolling, sitting, crawling, walking. Floor freedom isn't optional. It's the ground (literally) that development grows from.</p>
 
-      <h2>What We Do ג€” And What We Don't</h2>
+      <h2>What We Do  And What We Don't</h2>
 
       <h3>We Provide</h3>
       <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
@@ -378,7 +378,7 @@ document.querySelectorAll('.nav-mobile a').forEach(link => {
       <h2>The Philosophy Behind Everything</h2>
       <p>Your baby is not a project to be optimised. They are a human being with a nervous system that is doing its best to learn how to exist in the world.</p>
 
-      <p>Your job as a parent is not to teach them to roll, to crawl, or to walk. Your job is to <strong>make the ground comfortable</strong> ג€” to create conditions where those things can happen naturally.</p>
+      <p>Your job as a parent is not to teach them to roll, to crawl, or to walk. Your job is to <strong>make the ground comfortable</strong>  to create conditions where those things can happen naturally.</p>
 
       <p>This means:</p>
       <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
@@ -410,10 +410,10 @@ document.querySelectorAll('.nav-mobile a').forEach(link => {
     <div>
       <h4>Guides</h4>
       <ul>
-        <li><a href="/0-3-months.html">0ג€“3 Month Guide</a></li>
-        <li><a href="/3-6-months.html">3ג€“6 Month Guide</a></li>
-        <li><a href="/6-9-months.html">6ג€“9 Month Guide</a></li>
-        <li><a href="/9-12-months.html">9ג€“12 Month Guide</a></li>
+        <li><a href="/0-3-months.html">03 Month Guide</a></li>
+        <li><a href="/3-6-months.html">36 Month Guide</a></li>
+        <li><a href="/6-9-months.html">69 Month Guide</a></li>
+        <li><a href="/9-12-months.html">912 Month Guide</a></li>
         <li><a href="/bundle.html">First Year Bundle</a></li>
       </ul>
     </div>
@@ -435,10 +435,10 @@ document.querySelectorAll('.nav-mobile a').forEach(link => {
     </div>
   </div>
   <div class="footer-disclaimer">
-    Educational only ג€” not medical advice. First Year Foundations guides are educational resources for parents and do not replace evaluation or care from a paediatrician or qualified health professional. If you have concerns about your baby's development, consult your paediatrician.
+    Educational only  not medical advice. First Year Foundations guides are educational resources for parents and do not replace evaluation or care from a paediatrician or qualified health professional. If you have concerns about your baby's development, consult your paediatrician.
   </div>
   <div class="footer-bottom">
-    <span>ֲ© 2026 First Year Foundations. All rights reserved.</span>
+    <span> 2026 First Year Foundations. All rights reserved.</span>
     <span><a href="mailto:hello@first-years-foundations.com" style="color:rgba(255,255,255,0.4)">hello@first-years-foundations.com</a></span>
   </div>
 </footer>
@@ -496,6 +496,7 @@ document.querySelectorAll('.nav-mobile a').forEach(link => {
 
 </body>
 </html>
+
 
 
 
