@@ -1,0 +1,41 @@
+CORRUPTED FILES REQUIRING FIXES
+================================
+
+The following files have corrupted HTML due to a failed sed command.
+They need manual fixes using the Edit tool.
+
+CORRUPTED NAVIGATION PATTERN (appears in these files):
+- faq.html
+- terms.html
+- privacy.html
+- disclaimer.html
+- free.html
+- blog.html
+- blog-tummy-time.html
+- blog-rolling.html
+
+CURRENT CORRUPT PATTERN:
+<li><a href="/0-3-months.html">0>03 Months<#45;3 Months</a></li>
+<li><a href="/3-6-months.html">3>36 Months<#45;6 Months</a></li>
+<li><a href="/6-9-months.html">6>69 Months<#45;9 Months</a></li>
+<li><a href="/9-12-months.html">9>912 Months<#45;12 Months</a></li>
+
+NEEDS TO BE:
+<li><a href="/0-3-months.html">0&#45;3 Months</a></li>
+<li><a href="/3-6-months.html">3&#45;6 Months</a></li>
+<li><a href="/6-9-months.html">6&#45;9 Months</a></li>
+<li><a href="/9-12-months.html">9&#45;12 Months</a></li>
+
+FOOTER GUIDE LINKS (verify in each file):
+Should look like:
+<li><a href="/0-3-months.html">0&#45;3 Month Guide</a></li>
+<li><a href="/3-6-months.html">3&#45;6 Month Guide</a></li>
+<li><a href="/6-9-months.html">6&#45;9 Month Guide</a></li>
+<li><a href="/9-12-months.html">9&#45;12 Month Guide</a></li>
+
+HOW TO FIX:
+1. Open each corrupted file in Edit tool
+2. Find the corrupted nav-links section
+3. Replace with the correct pattern above
+4. Same for footer guide links
+5. Test in browser to verify hyphens display correctly
