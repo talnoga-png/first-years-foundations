@@ -126,6 +126,19 @@ p { color: var(--text); margin-bottom: 1rem; max-width: 68ch; }
   background: var(--purple-btn);
 }
 
+/* CTA box — highlighted call-to-action card */
+.cta-box {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  margin: 2rem 0;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+.cta-box h2 { margin-bottom: .75rem; }
+.cta-box p { margin: 0 auto 1.5rem; }
+
 /* Utility */
 .section-label {
   display: block;
@@ -170,6 +183,12 @@ section.alt { background: var(--bg-alt); }
 }
 .btn:hover { transform: translateY(-2px); text-decoration: none; }
 .btn:active { transform: translateY(0); }
+
+/* Large CTA */
+.btn--large {
+  padding: 1rem 2.4rem;
+  font-size: 1.05rem;
+}
 
 /* Primary — purple gradient */
 .btn--primary {
@@ -243,7 +262,7 @@ section.alt { background: var(--bg-alt); }
 }
 
 .nav-logo { display: flex; align-items: center; }
-.nav-logo img { height: 44px; width: 44px; object-fit: contain; }
+.nav-logo img { height: 44px; width: 44px; object-fit: contain; opacity: .8; }
 
 .nav-links {
   display: flex;
@@ -318,13 +337,16 @@ body[data-page="free"]  .nav-links a[data-nav="free"]::after {
 
 /* ── 7. Hero ─────────────────────────────────────────────────── */
 .hero {
-  padding: 5.5rem 0 4.5rem;
+  padding: 5.5rem 0 3rem;
   position: relative;
   overflow: hidden;
   /* Subtle radial gradient instead of flat colour */
   background:
     radial-gradient(ellipse 80% 60% at 50% 0%, rgba(206,203,246,.35) 0%, transparent 70%),
     var(--bg);
+}
+.hero + section {
+  padding-top: 2.5rem;
 }
 /* Decorative blobs */
 .hero::before,
@@ -391,6 +413,7 @@ body[data-page="free"]  .nav-links a[data-nav="free"]::after {
   display: inline-flex;
   align-items: center;
   gap: .4rem;
+  margin: 1.25rem 0;
   background: var(--warm-light);
   border: 1px solid var(--warm-mid);
   border-radius: var(--radius-pill);
