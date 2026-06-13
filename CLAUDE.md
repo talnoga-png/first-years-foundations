@@ -26,21 +26,34 @@ This file provides guidance to Claude Code when working on the First Year Founda
 
 ## Build Workflow
 
-1. **Edit HTML files locally** in `/`
-2. **Test locally** by opening in browser (no build step needed)
-3. **Git commit & push** → GitHub Pages auto-rebuilds site
-4. **Commit message format:** `feat(page-name): add [page title]` or `docs: update [page name]`
+Pages are generated from `*.src.html` source files via a small Node build script. **Never edit
+the generated `.html` files directly** — edits will be overwritten by the next build.
+
+1. **Nav/footer edits** → edit `_nav.html` / `_footer.html` (shared partials, single source of truth)
+2. **Content edits** → edit the relevant `<page>.src.html` file
+3. **Styles** → edit `styles.css` (shared stylesheet, includes a legacy CSS-variable alias block
+   for old `var(--purple-main)`-style names used throughout the page content)
+4. **Behavior** → edit `site.js` (shared script: mobile nav burger, FAQ accordion, scroll-reveal
+   via IntersectionObserver)
+5. **Run the build:** `node build.js` — regenerates all `*.html` files from `*.src.html`,
+   injects `{{NAV}}`/`{{FOOTER}}`, and sets `data-page` on `<body>` (add new pages to the
+   `PAGE_IDS` map in `build.js` if needed)
+6. **Test locally** by serving the directory (e.g. `npx serve .`) and checking at 390px + 1280px
+7. **Git commit & push** (both `.src.html` sources AND the regenerated `.html` files) →
+   GitHub Pages auto-rebuilds site
+8. **Commit message format:** `feat(page-name): add [page title]` or `docs: update [page name]`
 
 ## Design System
 
-All files use the same embedded stylesheet from index.html. Key CSS variables:
+Shared stylesheet: `styles.css`. Key CSS variables:
 
-- Colors: `--purple-dark`, `--purple-button`, `--lavender-bg`, `--teal`, etc.
+- Colors: `--purple-dark`, `--purple-button`, `--lavender-bg`, `--teal`, etc. (legacy aliases
+  for these names are kept in `styles.css` for backward compatibility with inline styles)
 - Layout: `.container` (max-width 900px), `.container--wide` (1100px)
-- Typography: Georgia serif, 17px base, 1.7 line-height
-- Components: `.btn`, `.guide-card`, `.why-card`, `.faq-item`, etc.
-
-See index.html lines 45–381 for full style block.
+- Typography: Lato (sans-serif stack), 17px base, 1.7 line-height
+- Components: `.btn`, `.guide-card`, `.why-card`, `.faq-item`/`.faq-q`/`.faq-a`, etc.
+- Scroll-reveal: add `.reveal` (single elements) or `.reveal-stagger` (grid/list containers)
+  to animate sections in on scroll (handled by `site.js`)
 
 ## Content Structure
 
@@ -132,14 +145,14 @@ Before launch:
 ## Commands
 
 ```bash
-# No build step needed — vanilla HTML/CSS
-# Just edit → commit → push → auto-deploys on GitHub Pages
+# Edit *.src.html / _nav.html / _footer.html / styles.css / site.js
+# Then rebuild the generated .html pages:
+node build.js
 
 # To preview locally:
-# Option 1: Open index.html in browser (works for most pages)
-# Option 2: Use VS Code Live Server extension
+npx serve .
 
-# Git workflow:
+# Git workflow (commit both .src.html sources and regenerated .html):
 git add [files]
 git commit -m "feat(page-name): add [page title]"
 git push origin main
