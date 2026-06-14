@@ -15,6 +15,14 @@ This file provides guidance to Claude Code when working on the First Year Founda
 - ❌ 3 legal pages (disclaimer, terms, privacy)
 - ❌ sitemap.xml and robots.txt
 
+## AI Team
+
+This project is run day-to-day by a small crew of Claude Code subagents (see
+`.claude/agents/`: `ceo`, `hr-recruiter`, `content-marketer`). Start with
+`.claude/company/charter.md` (operating rules/approval gate) and
+`.claude/company/org-chart.md` (current roster) — the crew grows over time via
+`hr-recruiter`'s hiring process, gated through founder approval.
+
 ## Tech Stack
 
 - **Hosting:** GitHub Pages (static site)
