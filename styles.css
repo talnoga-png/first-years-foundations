@@ -515,9 +515,9 @@ body[data-page="free"]  .nav-links a[data-nav="free"]::after {
 }
 .why-card .icon,
 .why-icon {
-  font-size: 1.75rem;
-  margin-bottom: .75rem;
   display: block;
+  margin-bottom: .85rem;
+  color: var(--purple-dark);
   line-height: 1;
 }
 .why-card h3 { font-size: 1.05rem; margin-bottom: .5rem; }
