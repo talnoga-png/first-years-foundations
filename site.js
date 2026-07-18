@@ -35,18 +35,59 @@
         burger.setAttribute('aria-expanded', 'false');
       }
     });
+    // Close on Escape and return focus to the burger (keyboard users)
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navList.classList.contains('open')) {
+        navList.classList.remove('open');
+        burger.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+        burger.focus();
+      }
+    });
   }
 
-  /* ── 3. FAQ accordion ── */
-  document.querySelectorAll('.faq-q').forEach((btn) => {
+  /* ── 3. FAQ accordion (with ARIA state for screen readers) ── */
+  document.querySelectorAll('.faq-q').forEach((btn, i) => {
+    const item = btn.closest('.faq-item');
+    const answer = item ? item.querySelector('.faq-a') : null;
+    // Wire up ARIA so assistive tech announces expand/collapse state.
+    btn.setAttribute('aria-expanded', item && item.classList.contains('open') ? 'true' : 'false');
+    if (answer) {
+      if (!answer.id) answer.id = 'faq-a-' + i;
+      btn.setAttribute('aria-controls', answer.id);
+    }
     btn.addEventListener('click', () => {
-      const item   = btn.closest('.faq-item');
       const isOpen = item.classList.contains('open');
-      // Close all others
-      document.querySelectorAll('.faq-item.open').forEach((el) => el.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
+      // Close all others and reset their ARIA state
+      document.querySelectorAll('.faq-item.open').forEach((el) => {
+        el.classList.remove('open');
+        const q = el.querySelector('.faq-q');
+        if (q) q.setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
     });
   });
+
+  /* ── 5. Cookie consent banner ── */
+  const banner = document.getElementById('cookie-banner');
+  if (banner) {
+    let stored = null;
+    try { stored = localStorage.getItem('fyf-consent'); } catch (e) {}
+    if (!stored) banner.hidden = false; // no choice yet → ask
+    banner.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-consent]');
+      if (!btn) return;
+      const accepted = btn.getAttribute('data-consent') === 'accept';
+      try { localStorage.setItem('fyf-consent', accepted ? 'granted' : 'denied'); } catch (e) {}
+      if (accepted && typeof window.fyfLoadAnalytics === 'function') {
+        window.fyfLoadAnalytics();
+      }
+      banner.hidden = true;
+    });
+  }
 
   /* ── 4. Scroll-reveal (Intersection Observer) ── */
   const revealTargets = document.querySelectorAll('.reveal, .reveal-stagger');

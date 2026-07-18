@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com; img-src 'self' data: https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://first-years-foundations-ndpk6k.subscribepage.io">
   <title>3–6 Month Baby Development Guide | Rolling & Floor Play | First Year Foundations</title>
   <meta name="description" content="Support your baby's rolling, reaching, and floor play at 36 months. Feldenkrais-informed PDF guide by a certified practitioner. No milestone pressure. $14.99.">
   <meta name="keywords" content="baby rolling, baby reaching, 3-6 months development, floor time, baby milestones">
@@ -41,6 +43,7 @@
 </head>
 <body data-page="3-6">
 
+<a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header" id="site-header">
   <div class="nav-inner">
     <a href="/" class="nav-logo" aria-label="First Year Foundations home">
@@ -64,7 +67,7 @@
 
 
 <!-- Hero -->
-<section class="hero">
+<section id="main-content" tabindex="-1" class="hero">
   <div class="container">
     <span class="hero-label">3&#45;6 Months · $14.99 · Instant PDF Download</span>
     <h1>From rolling to reaching  gentle support for months 3 to 6.</h1>
@@ -239,25 +242,49 @@
 </footer>
 
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PYRBFC16BM"></script>
+<!-- Analytics loader (consent-gated) + cookie consent banner -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-PYRBFC16BM');
+  // GA is NOT loaded until the visitor accepts. Events fired before that
+  // queue harmlessly in dataLayer and are only sent once analytics loads.
+  window.fyfLoadAnalytics = function () {
+    if (window.fyfGALoaded) return;
+    window.fyfGALoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-PYRBFC16BM';
+    document.head.appendChild(s);
+    gtag('js', new Date());
+    gtag('config', 'G-PYRBFC16BM');
+  };
+  // Honour a previously stored choice (no banner shown again).
+  try {
+    if (localStorage.getItem('fyf-consent') === 'granted') {
+      window.fyfLoadAnalytics();
+    }
+  } catch (e) { /* localStorage unavailable — banner will handle it */ }
+</script>
 
-  gtag('event', 'page_view', {
-    page_path: '/3-6-months.html',
-    page_title: '3–6 Month Guide'
-  });
+<!-- Cookie consent banner (shown by site.js only when no choice is stored) -->
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite" hidden>
+  <p class="cookie-banner__text">
+    We use analytics cookies to understand how the site is used and improve it.
+    You can accept or reject them &ndash; nothing loads until you choose. See our
+    <a href="/privacy.html">Privacy&nbsp;Policy</a>.
+  </p>
+  <div class="cookie-banner__actions">
+    <button type="button" class="btn btn--primary" data-consent="accept">Accept</button>
+    <button type="button" class="btn btn--outline" data-consent="reject">Reject</button>
+  </div>
+</div>
 
-  document.querySelectorAll('a[href*="whop.com"]').forEach(link => {
-    link.addEventListener('click', function() {
-      gtag('event', 'guide_purchase_click', {
-        guide: '3-6-months',
-        price: '$14.99'
-      });
+
+<!-- Product-specific event tracking (fires only after analytics consent) -->
+<script>
+  document.querySelectorAll('a[href*="whop.com"]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      gtag('event', 'guide_purchase_click', { guide: '3-6-months', price: '$14.99' });
     });
   });
 </script>

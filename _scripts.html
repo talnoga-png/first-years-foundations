@@ -1,0 +1,36 @@
+<!-- Analytics loader (consent-gated) + cookie consent banner -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  // GA is NOT loaded until the visitor accepts. Events fired before that
+  // queue harmlessly in dataLayer and are only sent once analytics loads.
+  window.fyfLoadAnalytics = function () {
+    if (window.fyfGALoaded) return;
+    window.fyfGALoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-PYRBFC16BM';
+    document.head.appendChild(s);
+    gtag('js', new Date());
+    gtag('config', 'G-PYRBFC16BM');
+  };
+  // Honour a previously stored choice (no banner shown again).
+  try {
+    if (localStorage.getItem('fyf-consent') === 'granted') {
+      window.fyfLoadAnalytics();
+    }
+  } catch (e) { /* localStorage unavailable — banner will handle it */ }
+</script>
+
+<!-- Cookie consent banner (shown by site.js only when no choice is stored) -->
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite" hidden>
+  <p class="cookie-banner__text">
+    We use analytics cookies to understand how the site is used and improve it.
+    You can accept or reject them &ndash; nothing loads until you choose. See our
+    <a href="/privacy.html">Privacy&nbsp;Policy</a>.
+  </p>
+  <div class="cookie-banner__actions">
+    <button type="button" class="btn btn--primary" data-consent="accept">Accept</button>
+    <button type="button" class="btn btn--outline" data-consent="reject">Reject</button>
+  </div>
+</div>

@@ -14,8 +14,9 @@
 const fs   = require('fs');
 const path = require('path');
 
-const nav    = fs.readFileSync('_nav.html',    'utf8');
-const footer = fs.readFileSync('_footer.html', 'utf8');
+const nav     = fs.readFileSync('_nav.html',     'utf8');
+const footer  = fs.readFileSync('_footer.html',  'utf8');
+const scripts = fs.readFileSync('_scripts.html', 'utf8');
 
 // Map from output filename → data-page value (matches data-nav on <a> tags)
 const PAGE_IDS = {
@@ -50,8 +51,35 @@ srcFiles.forEach(src => {
   let   content = fs.readFileSync(src, 'utf8');
 
   // Inject partials
-  content = content.replace(/\{\{NAV\}\}/g,    nav);
-  content = content.replace(/\{\{FOOTER\}\}/g, footer);
+  content = content.replace(/\{\{NAV\}\}/g,     nav);
+  content = content.replace(/\{\{FOOTER\}\}/g,  footer);
+  content = content.replace(/\{\{SCRIPTS\}\}/g, scripts);
+
+  // Accessibility: give the first content <section> a skip-link target so
+  // the "Skip to content" link in the nav can jump keyboard users past it.
+  content = content.replace('<section', '<section id="main-content" tabindex="-1"');
+
+  // Security: GitHub Pages cannot set HTTP response headers, so we inject the
+  // meta-tag equivalents into every page's <head>. The CSP still permits our
+  // inline scripts (consent + JSON-LD) and Google Analytics.
+  const securityMeta = [
+    '<meta name="referrer" content="strict-origin-when-cross-origin">',
+    '<meta http-equiv="Content-Security-Policy" content="' + [
+      "default-src 'self'",
+      "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com",
+      "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com",
+      "img-src 'self' data: https://www.google-analytics.com",
+      "style-src 'self' 'unsafe-inline'",
+      "font-src 'self'",
+      "object-src 'none'",
+      "base-uri 'self'",
+      "form-action 'self' https://first-years-foundations-ndpk6k.subscribepage.io",
+    ].join('; ') + '">',
+  ].join('\n  ');
+  content = content.replace(
+    /<meta name="viewport"[^>]*>/,
+    (m) => `${m}\n  ${securityMeta}`
+  );
 
   // Set data-page on <body> for CSS active-nav targeting
   content = content.replace(/<body([^>]*)>/, (match, attrs) => {
