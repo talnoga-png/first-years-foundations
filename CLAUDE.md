@@ -28,7 +28,11 @@ This project is run day-to-day by a small crew of Claude Code subagents (see
 - **Hosting:** GitHub Pages (static site)
 - **Framework:** Vanilla HTML/CSS/JS (no build step)
 - **Repository:** https://github.com/talnoga-png/first-years-foundations (main branch → auto-deploys)
-- **Domain:** first-year-foundations.com (GitHub Pages custom domain)
+- **Website domain:** first-year**s**-foundations.com — WITH the "s" (GitHub Pages custom
+  domain, per CNAME + all page canonicals). This is where the live site is served.
+- **Contact email:** hello@first-year-foundations.com — NO "s" (Porkbun-forwarded mailbox,
+  MailerLite-verified sender). The website domain and the email domain deliberately differ;
+  do not "unify" them.
 - **E-commerce:** Whop (external — guides sold via Whop store)
 - **Email:** MailerLite (automation sequences for leads + buyers)
 

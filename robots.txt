@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin/
 Disallow: /.git/
 
-Sitemap: https://first-year-foundations.com/sitemap.xml
+Sitemap: https://first-years-foundations.com/sitemap.xml
