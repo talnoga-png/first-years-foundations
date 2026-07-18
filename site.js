@@ -71,21 +71,45 @@
     });
   });
 
-  /* ── 5. Cookie consent banner ── */
+  /* ── 5. Cookie consent banner (Accept All / Reject All / Customize) ── */
   const banner = document.getElementById('cookie-banner');
   if (banner) {
     let stored = null;
     try { stored = localStorage.getItem('fyf-consent'); } catch (e) {}
     if (!stored) banner.hidden = false; // no choice yet → ask
-    banner.addEventListener('click', (e) => {
-      const btn = e.target.closest('[data-consent]');
-      if (!btn) return;
-      const accepted = btn.getAttribute('data-consent') === 'accept';
-      try { localStorage.setItem('fyf-consent', accepted ? 'granted' : 'denied'); } catch (e) {}
-      if (accepted && typeof window.fyfLoadAnalytics === 'function') {
+
+    const options       = document.getElementById('cookie-options');
+    const analyticsCbx  = document.getElementById('consent-analytics');
+    const customizeBtn  = document.getElementById('consent-customize-btn');
+    const saveBtn       = document.getElementById('consent-save-btn');
+
+    // Store the choice and load analytics only if the visitor allowed it.
+    // Analytics is the only optional category, so every path resolves to a
+    // single granted/denied value (kept simple + backwards compatible).
+    const finish = (granted) => {
+      try { localStorage.setItem('fyf-consent', granted ? 'granted' : 'denied'); } catch (e) {}
+      if (granted && typeof window.fyfLoadAnalytics === 'function') {
         window.fyfLoadAnalytics();
       }
       banner.hidden = true;
+    };
+
+    banner.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-consent]');
+      if (!btn) return;
+      const action = btn.getAttribute('data-consent');
+      if (action === 'accept') {
+        finish(true);
+      } else if (action === 'reject') {
+        finish(false);
+      } else if (action === 'customize') {
+        if (options)      options.hidden = false;
+        if (customizeBtn) customizeBtn.hidden = true;
+        if (saveBtn)      saveBtn.hidden = false;
+        if (analyticsCbx && analyticsCbx.focus) analyticsCbx.focus();
+      } else if (action === 'save') {
+        finish(!!(analyticsCbx && analyticsCbx.checked));
+      }
     });
   }
 
