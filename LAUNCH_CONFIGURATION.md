@@ -13,11 +13,11 @@ First Year Foundations is a static HTML site hosted on GitHub Pages with a custo
 - [ ] Pediatrician review completed — medical claims approved
 - [ ] Lawyer review completed — legal pages approved
 - [ ] Whop products created with correct pricing and download links:
-  - [ ] 0-3 Month Guide ($14.99) — https://whop.com/joined/first-year-foundations/0-3-month-guide-files-a2uuQ5Drwqgg9w/app/
-  - [ ] 3-6 Month Guide ($14.99) — https://whop.com/joined/first-year-foundations/3-6-month-guide-files-b9yNArW0ZA4QTV/app/
-  - [ ] 6-9 Month Guide ($14.99) — https://whop.com/joined/first-year-foundations/6-9-month-guide-files-TRF8JH2biMb8UA/app/
-  - [ ] 9-12 Month Guide ($14.99) — https://whop.com/joined/first-year-foundations/9-12-month-guide-files-9A816HDg2rv92h/app/
-  - [ ] Bundle ($39.99) — https://whop.com/joined/first-year-foundations/all-developmental-guides-J6gvhYN0YLDjph/app/
+  - [ ] 0-3 Month Guide ($14.99) — https://whop.com/joined/first-year-foundations/products/0-3-month-developmental-guide/
+  - [ ] 3-6 Month Guide ($14.99) — https://whop.com/joined/first-year-foundations/products/3-6-month-developmental-guide/
+  - [ ] 6-9 Month Guide ($14.99) — https://whop.com/joined/first-year-foundations/products/6-9-month-developmental-guide/
+  - [ ] 9-12 Month Guide ($14.99) — https://whop.com/joined/first-year-foundations/products/9-12-month-developmental-guide/
+  - [ ] Bundle ($39.99) — https://whop.com/joined/first-year-foundations/products/complete-first-year-bundle/
   - [ ] Free Guide email capture (via MailerLite) — https://first-years-foundations-ndpk6k.subscribepage.io
 - [ ] MailerLite email sequence set up for free guide delivery
 - [ ] Zapier automation configured: Whop purchase → MailerLite Buyers group
