@@ -38,7 +38,7 @@ This project is run day-to-day by a small crew of Claude Code subagents (see
 
 ## Build Workflow
 
-Pages are generated from `*.src.html` source files via a small Node build script. **Never edit
+Pages are generated from `*.src.html` source files (kept in `_src/`, which GitHub Pages does not serve) via a small Node build script. **Never edit
 the generated `.html` files directly** — edits will be overwritten by the next build.
 
 1. **Nav/footer edits** → edit `_nav.html` / `_footer.html` (shared partials, single source of truth)
@@ -47,7 +47,7 @@ the generated `.html` files directly** — edits will be overwritten by the next
    for old `var(--purple-main)`-style names used throughout the page content)
 4. **Behavior** → edit `site.js` (shared script: mobile nav burger, FAQ accordion, scroll-reveal
    via IntersectionObserver)
-5. **Run the build:** `node build.js` — regenerates all `*.html` files from `*.src.html`,
+5. **Run the build:** `node _src/build.js` — regenerates all `*.html` files from `*.src.html`,
    injects `{{NAV}}`/`{{FOOTER}}`, and sets `data-page` on `<body>` (add new pages to the
    `PAGE_IDS` map in `build.js` if needed)
 6. **Test locally** by serving the directory (e.g. `npx serve .`) and checking at 390px + 1280px
@@ -159,7 +159,7 @@ Before launch:
 ```bash
 # Edit *.src.html / _nav.html / _footer.html / styles.css / site.js
 # Then rebuild the generated .html pages:
-node build.js
+node _src/build.js
 
 # To preview locally:
 npx serve .
