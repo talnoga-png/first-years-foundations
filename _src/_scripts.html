@@ -1,25 +1,32 @@
 <!-- Analytics loader (consent-gated) + cookie consent banner -->
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  // GA is NOT loaded until the visitor accepts. Events fired before that
-  // queue harmlessly in dataLayer and are only sent once analytics loads.
+  window.fyfAnalyticsAllowed = false;
+  window['ga-disable-G-PYRBFC16BM'] = true;
+  function gtag() {
+    if (arguments[0] === 'event' && !window.fyfAnalyticsAllowed) return;
+    window.dataLayer.push(arguments);
+  }
   window.fyfLoadAnalytics = function () {
+    window.fyfAnalyticsAllowed = true;
+    window['ga-disable-G-PYRBFC16BM'] = false;
     if (window.fyfGALoaded) return;
     window.fyfGALoaded = true;
+    gtag('consent', 'default', {analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'});
+    gtag('js', new Date());
+    gtag('config', 'G-PYRBFC16BM', {
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false,
+      page_location: location.origin + location.pathname
+    });
     var s = document.createElement('script');
     s.async = true;
     s.src = 'https://www.googletagmanager.com/gtag/js?id=G-PYRBFC16BM';
     document.head.appendChild(s);
-    gtag('js', new Date());
-    gtag('config', 'G-PYRBFC16BM');
   };
-  // Honour a previously stored choice (no banner shown again).
   try {
-    if (localStorage.getItem('fyf-consent') === 'granted') {
-      window.fyfLoadAnalytics();
-    }
-  } catch (e) { /* localStorage unavailable — banner will handle it */ }
+    if (localStorage.getItem('fyf-consent') === 'granted') window.fyfLoadAnalytics();
+  } catch (e) {}
 </script>
 
 <!-- Cookie consent banner (shown by site.js only when no choice is stored) -->
