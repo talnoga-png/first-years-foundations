@@ -67,7 +67,7 @@ srcFiles.forEach(src => {
     '<meta http-equiv="Content-Security-Policy" content="' + [
       "default-src 'self'",
       "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com",
-      "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com",
+      "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com",
       "img-src 'self' data: https://www.google-analytics.com",
       "style-src 'self' 'unsafe-inline'",
       "font-src 'self'",
@@ -80,6 +80,24 @@ srcFiles.forEach(src => {
     /<meta name="viewport"[^>]*>/,
     (m) => `${m}\n  ${securityMeta}`
   );
+
+  // Use a purpose-sized share image, keeping title/description consistent.
+  if (out !== '404.html') {
+    content = content.replace(/\s*<meta property="og:image"[^>]*>/g, '');
+    const title = content.match(/<meta property="og:title" content="([^"]*)"/);
+    const desc = content.match(/<meta name="description" content="([^"]*)"/);
+    content = content.replace('</head>', [
+      '<meta property="og:image" content="https://first-years-foundations.com/images/social-card.png">',
+      '<meta property="og:image:width" content="1200">',
+      '<meta property="og:image:height" content="630">',
+      '<meta property="og:image:alt" content="First Years Foundations - gentle baby development guides">',
+      '<meta name="twitter:card" content="summary_large_image">',
+      '<meta name="twitter:image" content="https://first-years-foundations.com/images/social-card.png">',
+      title ? '<meta name="twitter:title" content="' + title[1] + '">' : '',
+      desc ? '<meta name="twitter:description" content="' + desc[1] + '">' : '',
+      '</head>'
+    ].join('\n  '));
+  }
 
   // Set data-page on <body> for CSS active-nav targeting
   content = content.replace(/<body([^>]*)>/, (match, attrs) => {

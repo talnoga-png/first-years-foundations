@@ -1,27 +1,35 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com; img-src 'self' data: https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://first-years-foundations-ndpk6k.subscribepage.io">
-  <title>FAQ – Baby Development Guides | First Year Foundations</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com; img-src 'self' data: https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://first-years-foundations-ndpk6k.subscribepage.io">
+  <title>FAQ – Baby Development Guides | First Years Foundations</title>
   <meta name="description" content="Common questions about our baby development guides, Feldenkrais method, and how to use the resources with your baby.">
   <link rel="canonical" href="https://first-years-foundations.com/faq.html">
-  <meta property="og:title" content="FAQ – First Year Foundations">
+  <meta property="og:title" content="FAQ – First Years Foundations">
   <meta property="og:description" content="Answers to common questions about our guides, methods, and how to support your baby's development.">
   <meta property="og:url" content="https://first-years-foundations.com/faq.html">
   <meta property="og:type" content="website">
 
   <link rel="stylesheet" href="/styles.css">
-</head>
+<meta property="og:image" content="https://first-years-foundations.com/images/social-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="First Years Foundations - gentle baby development guides">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://first-years-foundations.com/images/social-card.png">
+  <meta name="twitter:title" content="FAQ – First Years Foundations">
+  <meta name="twitter:description" content="Common questions about our baby development guides, Feldenkrais method, and how to use the resources with your baby.">
+  </head>
 <body data-page="faq">
 
 <a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header" id="site-header">
   <div class="nav-inner">
-    <a href="/" class="nav-logo" aria-label="First Year Foundations home">
-      <img src="/images/logo.png" alt="First Year Foundations" width="48" height="48">
+    <a href="/" class="nav-logo" aria-label="First Years Foundations home">
+      <img src="/images/logo.png" alt="First Years Foundations" width="48" height="48">
     </a>
     <nav aria-label="Main navigation">
       <ul class="nav-links" role="list">
@@ -64,7 +72,7 @@
         </div>
 
         <div class="faq-item">
-          <button class="faq-q">Why First Year Foundations? How are you different?<span class="faq-icon">+</span></button>
+          <button class="faq-q">Why First Years Foundations? How are you different?<span class="faq-icon">+</span></button>
           <p class="faq-a">Most baby development resources are built around milestone checklists — a list of things your baby "should" be doing by a certain age. We think that misses the point. Milestones are outcomes. What actually shapes development is the quality of movement that comes before them: how freely your baby can explore, how comfortable they feel in their body, how much varied floor experience they get. Our guides focus on that — the underlying movement quality — because that's where the Feldenkrais method operates. Our guides are written by a Feldenkrais-certified practitioner. Movement isn't just a topic we write about; it's the discipline behind the guidance. The result is guidance that's grounded in a deep, holistic understanding of how human movement actually develops — not just a checklist of what to do by when.</p>
         </div>
 
@@ -139,7 +147,7 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="/images/logo.png" alt="First Year Foundations" width="64" height="64">
+      <img src="/images/logo.png" alt="First Years Foundations" width="64" height="64">
       <p>Gentle, age-specific baby development guides for the first year. Written by a Feldenkrais-certified practitioner.</p>
     </div>
     <div class="footer-col">
@@ -171,10 +179,10 @@
     </div>
   </div>
   <p class="footer-disclaimer">
-    Educational only &ndash; not medical advice. First Year Foundations guides are educational resources for parents and do not replace evaluation or care from a paediatrician or qualified health professional. If you have concerns about your baby&rsquo;s development, consult your paediatrician.
+    Educational only &ndash; not medical advice. First Years Foundations guides are educational resources for parents and do not replace evaluation or care from a paediatrician or qualified health professional. If you have concerns about your baby&rsquo;s development, consult your paediatrician.
   </p>
   <div class="footer-bottom">
-    <span>&copy; 2026 First Year Foundations. All rights reserved.</span>
+    <span>&copy; 2026 First Years Foundations. All rights reserved.</span>
     <span><button type="button" class="footer-link-btn" data-cookie-settings>Cookie settings</button> &middot; <a href="mailto:hello@first-years-foundations.com">hello@first-years-foundations.com</a></span>
   </div>
 </footer>
@@ -183,25 +191,32 @@
 <!-- Analytics loader (consent-gated) + cookie consent banner -->
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  // GA is NOT loaded until the visitor accepts. Events fired before that
-  // queue harmlessly in dataLayer and are only sent once analytics loads.
+  window.fyfAnalyticsAllowed = false;
+  window['ga-disable-G-PYRBFC16BM'] = true;
+  function gtag() {
+    if (arguments[0] === 'event' && !window.fyfAnalyticsAllowed) return;
+    window.dataLayer.push(arguments);
+  }
   window.fyfLoadAnalytics = function () {
+    window.fyfAnalyticsAllowed = true;
+    window['ga-disable-G-PYRBFC16BM'] = false;
     if (window.fyfGALoaded) return;
     window.fyfGALoaded = true;
+    gtag('consent', 'default', {analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'});
+    gtag('js', new Date());
+    gtag('config', 'G-PYRBFC16BM', {
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false,
+      page_location: location.origin + location.pathname
+    });
     var s = document.createElement('script');
     s.async = true;
     s.src = 'https://www.googletagmanager.com/gtag/js?id=G-PYRBFC16BM';
     document.head.appendChild(s);
-    gtag('js', new Date());
-    gtag('config', 'G-PYRBFC16BM');
   };
-  // Honour a previously stored choice (no banner shown again).
   try {
-    if (localStorage.getItem('fyf-consent') === 'granted') {
-      window.fyfLoadAnalytics();
-    }
-  } catch (e) { /* localStorage unavailable — banner will handle it */ }
+    if (localStorage.getItem('fyf-consent') === 'granted') window.fyfLoadAnalytics();
+  } catch (e) {}
 </script>
 
 <!-- Cookie consent banner (shown by site.js only when no choice is stored) -->
@@ -240,6 +255,5 @@
 
 </body>
 </html>
-
 
 
