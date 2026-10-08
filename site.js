@@ -83,16 +83,67 @@
     const customizeBtn  = document.getElementById('consent-customize-btn');
     const saveBtn       = document.getElementById('consent-save-btn');
 
+    const closeBtn = document.getElementById('consent-close-btn');
+    const GA_ID = 'G-PYRBFC16BM';
+    let opener = null;
+
+    // Withdrawing consent: stop GA from sending and remove its cookies.
+    const disableAnalytics = () => {
+      window['ga-disable-' + GA_ID] = true;
+      const host = location.hostname;
+      const domains = ['', host, '.' + host, '.' + host.replace(/^www\./, '')];
+      document.cookie.split(';').forEach((c) => {
+        const name = c.split('=')[0].trim();
+        if (name === '_ga' || name.indexOf('_ga_') === 0 || name === '_gid' || name.indexOf('_gat') === 0) {
+          domains.forEach((d) => {
+            document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/' +
+              (d ? '; domain=' + d : '');
+          });
+        }
+      });
+    };
+
+    const closePanel = () => {
+      banner.hidden = true;
+      if (opener && opener.focus) opener.focus();
+      opener = null;
+    };
+
     // Store the choice and load analytics only if the visitor allowed it.
     // Analytics is the only optional category, so every path resolves to a
     // single granted/denied value (kept simple + backwards compatible).
     const finish = (granted) => {
       try { localStorage.setItem('fyf-consent', granted ? 'granted' : 'denied'); } catch (e) {}
-      if (granted && typeof window.fyfLoadAnalytics === 'function') {
-        window.fyfLoadAnalytics();
+      if (granted) {
+        window['ga-disable-' + GA_ID] = false;
+        if (typeof window.fyfLoadAnalytics === 'function') window.fyfLoadAnalytics();
+      } else {
+        disableAnalytics();
       }
-      banner.hidden = true;
+      closePanel();
     };
+
+    // Reopen from the footer "Cookie settings" control on any page: show the
+    // customize panel with the current choice pre-selected.
+    const openSettings = (trigger) => {
+      let cur = null;
+      try { cur = localStorage.getItem('fyf-consent'); } catch (e) {}
+      opener = trigger || null;
+      if (analyticsCbx) analyticsCbx.checked = (cur === 'granted');
+      if (options)      options.hidden = false;
+      if (customizeBtn) customizeBtn.hidden = true;
+      if (saveBtn)      saveBtn.hidden = false;
+      if (closeBtn)     closeBtn.hidden = !cur;
+      banner.hidden = false;
+      if (analyticsCbx && analyticsCbx.focus) analyticsCbx.focus();
+    };
+
+    document.querySelectorAll('[data-cookie-settings]').forEach((el) => {
+      el.addEventListener('click', () => openSettings(el));
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !banner.hidden && closeBtn && !closeBtn.hidden) closePanel();
+    });
 
     banner.addEventListener('click', (e) => {
       const btn = e.target.closest('[data-consent]');
@@ -102,6 +153,8 @@
         finish(true);
       } else if (action === 'reject') {
         finish(false);
+      } else if (action === 'close') {
+        closePanel();
       } else if (action === 'customize') {
         if (options)      options.hidden = false;
         if (customizeBtn) customizeBtn.hidden = true;
