@@ -740,7 +740,7 @@ body[data-page="free"]  .nav-links a[data-nav="free"]::after {
   height: 56px; width: 56px; object-fit: contain;
   margin-bottom: .75rem;
 }
-.footer-brand p { font-size: .85rem; line-height: 1.65; color: rgba(255,255,255,.50); max-width: 36ch; }
+.footer-brand p { font-size: .85rem; line-height: 1.65; color: rgba(255,255,255,.78); max-width: 36ch; }
 .footer-col h4 {
   color: rgba(255,255,255,.85);
   font-size: .8rem;
@@ -750,7 +750,7 @@ body[data-page="free"]  .nav-links a[data-nav="free"]::after {
   font-family: 'Lato', sans-serif;
 }
 .footer-col ul { display: flex; flex-direction: column; gap: .45rem; }
-.footer-col a  { font-size: .88rem; color: rgba(255,255,255,.55); transition: color var(--t-fast); }
+.footer-col a, .footer-link-btn { font-size: .88rem; color: rgba(255,255,255,.82); transition: color var(--t-fast); }
 .footer-col a:hover { color: var(--white); text-decoration: none; }
 
 .footer-disclaimer {
@@ -758,7 +758,7 @@ body[data-page="free"]  .nav-links a[data-nav="free"]::after {
   margin: 2rem auto 0;
   padding: 0 1.5rem;
   font-size: .78rem;
-  color: rgba(255,255,255,.30);
+  color: rgba(255,255,255,.72);
   line-height: 1.65;
 }
 .footer-bottom {
@@ -772,10 +772,19 @@ body[data-page="free"]  .nav-links a[data-nav="free"]::after {
   flex-wrap: wrap;
   gap: .5rem;
   font-size: .8rem;
-  color: rgba(255,255,255,.35);
+  color: rgba(255,255,255,.75);
 }
-.footer-bottom a { color: rgba(255,255,255,.35); }
-.footer-bottom a:hover { color: rgba(255,255,255,.7); text-decoration: none; }
+.footer-bottom a { color: rgba(255,255,255,.75); }
+.footer-bottom a:hover { color: var(--white); text-decoration: none; }
+/* "Cookie settings" control: a button styled like the footer links */
+.footer-link-btn {
+  background: none; border: 0; padding: 0; margin: 0;
+  font-family: inherit; cursor: pointer; text-align: left;
+  transition: color var(--t-fast);
+}
+.footer-link-btn:hover { color: var(--white); text-decoration: underline; }
+.footer-bottom .footer-link-btn { font-size: .8rem; color: rgba(255,255,255,.75); }
+.footer-bottom .footer-link-btn:hover { color: var(--white); }
 
 /* ── 16. Scroll-reveal animations ───────────────────────────── */
 .reveal {
