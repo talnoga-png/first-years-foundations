@@ -509,7 +509,7 @@ body[data-page="free"]  .nav-links a[data-nav="free"]::after {
 }
 .guide-card-age {
   display: block;
-  font-size: .73rem;
+  font-size: .78rem;
   font-weight: 700;
   letter-spacing: .11em;
   text-transform: uppercase;
@@ -741,7 +741,9 @@ body[data-page="free"]  .nav-links a[data-nav="free"]::after {
   margin-bottom: .75rem;
 }
 .footer-brand p { font-size: .85rem; line-height: 1.65; color: rgba(255,255,255,.78); max-width: 36ch; }
-.footer-col h4 {
+.footer-col .footer-h {
+  font-weight: 700;
+  line-height: 1.3;
   color: rgba(255,255,255,.85);
   font-size: .8rem;
   letter-spacing: .1em;
@@ -975,3 +977,33 @@ button:focus-visible,
 @media (max-width: 420px) {
   .cookie-banner__actions .btn { flex-basis: 100%; }
 }
+
+/* ── 19. Mobile accessibility + readability (items 12, 17) ───── */
+.hero-sub-short { display: none; }
+p > a:only-child, .blog-link { display: inline-block; padding: .5rem 0; }
+@media (max-width: 840px) {
+  /* Opaque mobile menu: nothing shows through, larger tap targets */
+  .nav-links {
+    background: #fdfcff;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .site-header.scrolled, .site-header { -webkit-backdrop-filter: none; backdrop-filter: none; background: #fdfcff; }
+  .nav-links a:not(.btn--nav) { padding: .85rem 0; }
+  .btn--nav { padding-top: .85rem; padding-bottom: .85rem; }
+  .footer-col ul { gap: 0; }
+  .footer-col a, .footer-link-btn { display: inline-block; padding: .65rem 0; }
+  .footer-bottom .footer-link-btn, .footer-bottom a { padding: .5rem .25rem; display: inline-block; }
+}
+@media (max-width: 560px) {
+  /* Item 17: shorter first screen of text on phones */
+  .hide-sm { display: none; }
+  .hero-sub-long { display: none; }
+  .hero-sub-short { display: inline; }
+  .hero { padding-top: 2.5rem; }
+}
+
+/* Contrast: small labels/icons on light backgrounds reach 4.5:1 (AA) */
+.hero-label, .section-label, .faq-icon { color: var(--purple); }
+.credential-badge { color: #9A4524; }
+.hero-label .hide-sm{margin-left:-.45rem}
