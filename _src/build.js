@@ -99,6 +99,9 @@ srcFiles.forEach(src => {
     ].join('\n  '));
   }
 
+  // Version shared JS so returning browsers use the current consent/event code.
+  content = content.replace('src="/site.js"', 'src="/site.js?v=20261008-18-19"');
+
   // Set data-page on <body> for CSS active-nav targeting
   content = content.replace(/<body([^>]*)>/, (match, attrs) => {
     // Remove any existing data-page, then add the correct one
