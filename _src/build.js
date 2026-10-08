@@ -51,8 +51,8 @@ srcFiles.forEach(src => {
   let   content = fs.readFileSync(path.join('_src', src), 'utf8');
 
   // Inject partials
-  content = content.replace(/\{\{NAV\}\}/g,     nav);
-  content = content.replace(/\{\{FOOTER\}\}/g,  footer);
+  content = content.replace(/\{\{NAV\}\}/g,     nav + '\n<main>');
+  content = content.replace(/\{\{FOOTER\}\}/g,  '</main>\n' + footer);
   content = content.replace(/\{\{SCRIPTS\}\}/g, scripts);
 
   // Accessibility: give the first content <section> a skip-link target so
