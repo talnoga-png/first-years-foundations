@@ -12,8 +12,8 @@
 | Brand name | First Year Foundations |
 | Domain | first-year-foundations.com (purchased on Porkbun) |
 | MailerLite domain | first-years-foundations.com (note the S — different from main domain) |
-| Business email | hello@first-year-foundations.com (Porkbun email forwarding → talnoga@gmail.com) |
-| Contact email | hello@first-year-foundations.com |
+| Business email | hello@first-years-foundations.com (Porkbun email forwarding → talnoga@gmail.com) |
+| Contact email | hello@first-years-foundations.com |
 | Brand sign-off | First Year Foundations Team (no personal name exposed) |
 | Creator credential | Feldenkrais-certified practitioner |
 | Target audience | Parents of babies aged 0–12 months, primarily US-based English speakers |
@@ -44,7 +44,7 @@
 | Tool | Status & Notes |
 |------|---|
 | Whop | LIVE. Store: whop.com/first-year-foundations. 5 products live, payout configured for Israel (USD), verification approved. |
-| MailerLite | LIVE. Free plan. Sending domain: first-year-foundations.com verified. Sender: hello@first-year-foundations.com |
+| MailerLite | LIVE. Free plan. Sending domain: first-year-foundations.com verified. Sender: hello@first-years-foundations.com |
 | Zapier | LIVE. Zap: Whop new payment → MailerLite Create/Update Subscriber + Add to Buyers group. Free tier (100 tasks/month). |
 | GitHub Pages | LIVE. Repo: github.com/talnoga-png/first-years-foundations. Custom domain: first-year-foundations.com. HTTPS enforced. |
 | Porkbun | Domain registrar. Email forwarding set up: hello@ → talnoga@gmail.com. |
@@ -86,7 +86,7 @@
 
 **Email settings:**
 - Sender name: First Year Foundations Team
-- Sender email: hello@first-year-foundations.com
+- Sender email: hello@first-years-foundations.com
 - Footer: Educational only — not medical advice. first-year-foundations.com + unsubscribe link
 - Variable syntax: {$name} for first name personalisation
 
