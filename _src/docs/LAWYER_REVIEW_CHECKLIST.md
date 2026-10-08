@@ -85,7 +85,7 @@ Before launch, have an attorney review the legal/compliance pages. Use this chec
 
 4. **Email Marketing Compliance** — MailerLite GDPR-compliant? Opt-in/unsubscribe mechanisms in place?
 
-5. **Seller Information** — Should legal pages list business name, address, owner name? (Currently only email: hello@first-year-foundations.com)
+5. **Seller Information** — Should legal pages list business name, address, owner name? (Currently only email: hello@first-years-foundations.com)
 
 ---
 
