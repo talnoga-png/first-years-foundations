@@ -89,6 +89,7 @@
 
     // Withdrawing consent: stop GA from sending and remove its cookies.
     const disableAnalytics = () => {
+      window.fyfAnalyticsAllowed = false;
       window['ga-disable-' + GA_ID] = true;
       const host = location.hostname;
       const domains = ['', host, '.' + host, '.' + host.replace(/^www\./, '')];
@@ -165,6 +166,21 @@
       }
     });
   }
+
+  // Outbound intent only: never count a click as a purchase or completed signup.
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href]');
+    if (!link || !window.fyfAnalyticsAllowed) return;
+    const url = new URL(link.href, location.href);
+    if (url.hostname === 'whop.com') {
+      const product = url.pathname.split('/').filter(Boolean).pop();
+      gtag('event', 'guide_purchase_click', {guide: product, page_path: location.pathname, transport_type: 'beacon'});
+    } else if (url.hostname === 'first-years-foundations-ndpk6k.subscribepage.io') {
+      gtag('event', 'free_guide_signup_click', {page_path: location.pathname, transport_type: 'beacon'});
+    } else if (url.origin === location.origin && url.pathname === '/free.html') {
+      gtag('event', 'free_guide_click', {page_path: location.pathname});
+    }
+  });
 
   /* ── 4. Scroll-reveal (Intersection Observer) ── */
   const revealTargets = document.querySelectorAll('.reveal, .reveal-stagger');
