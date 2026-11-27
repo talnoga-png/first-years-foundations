@@ -13,7 +13,7 @@ The site has a **separator display issue** in navigation and content. The goal i
 
 ### ✅ CORRECTLY UPDATED (HTML entities properly applied)
 - `index.html` - Navigation and footer use `&#45;` entities correctly
-- `0-3-months.html` - Hero label: "0&#45;3 Months · $14.99 · Instant PDF Download"
+- `0-3-months.html` - Hero label: "0&#45;3 Months · $23.99 · Instant PDF Download"
 - `3-6-months.html` - Same format applied
 - `6-9-months.html` - Same format applied  
 - `9-12-months.html` - Same format applied
@@ -62,7 +62,7 @@ For each corrupted file (faq.html, terms.html, privacy.html, disclaimer.html, fr
 After fixing, verify via live site (https://first-years-foundations.com):
 - Navigation shows: "0-3 Months", "3-6 Months", "6-9 Months", "9-12 Months" (with visible hyphens)
 - Footer links show same format with "Month Guide" suffix
-- Hero labels show: "0-3 Months · $14.99 · Instant PDF Download" with visible dots and hyphens
+- Hero labels show: "0-3 Months · $23.99 · Instant PDF Download" with visible dots and hyphens
 - No garbled characters or HTML entities visible in browser
 
 ### Priority 3: Text Separators
